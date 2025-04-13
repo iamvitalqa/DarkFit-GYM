@@ -15,7 +15,8 @@ namespace DarkFit_app
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BarPage : ContentPage, INotifyPropertyChanged
     {
-        private readonly string connectionString = "Host=192.168.0.106;Port=5432;Database=DarkFit;Username=postgres;Password=admin;Timeout=5;";
+        private readonly string connectionString = DarkFitDatabase.ConnectionString;
+
         public ObservableCollection<CategoryViewModel> Categories { get; set; }
         public ObservableCollection<Product> AllProducts { get; set; }
         private CategoryViewModel _selectedCategory;

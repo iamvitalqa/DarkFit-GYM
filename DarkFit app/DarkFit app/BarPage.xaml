@@ -5,6 +5,37 @@
              Title="DARKFIT BAR"
              BackgroundColor="#f1f2f3"
              x:Class="DarkFit_app.BarPage">
+
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="60,*,60"
+          VerticalOptions="Center">
+                <Image Source="darkfitCaption.png"
+               HorizontalOptions="Start"
+               VerticalOptions="Center" 
+               Grid.Column="0"/>
+            <Label Text="DARKFIT BAR"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               VerticalOptions="Center"
+               TextColor="Black"
+               FontAttributes="Bold"
+               FontSize="28"
+               Grid.Column="1"
+                />
+
+            <ImageButton Source="korzina.png"
+             HeightRequest="40"
+             WidthRequest="40"
+             BackgroundColor="Transparent"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Clicked="cartButton_Clicked"
+             Grid.Column="2"/>
+
+        </Grid>
+    </Shell.TitleView>
+
     <ContentPage.Content>
         <StackLayout Padding="10">
             <!-- Фрейм для выбора категории с кнопкой корзины -->
@@ -27,14 +58,7 @@
                             ItemDisplayBinding="{Binding ProductTypeName}"
                             Grid.Column="0" />
 
-                    <ImageButton Source="korzina.png"
-                                 HeightRequest="40"
-                                 WidthRequest="40"
-                                 BackgroundColor="Transparent"
-                                 VerticalOptions="Center"
-                                 HorizontalOptions="End"
-                                 Clicked="cartButton_Clicked"
-                                 Grid.Column="1"/>
+                    
                 </Grid>
             </Frame>
 

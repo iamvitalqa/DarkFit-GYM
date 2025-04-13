@@ -4,6 +4,26 @@
              x:Class="DarkFit_app.GroupsPage"
              BackgroundColor="#f1f2f3"
              Title="Групповые тренировки">
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="60,*,60"
+          VerticalOptions="Center">
+            <Image Source="darkfitCaption.png"
+               HorizontalOptions="Start"
+               VerticalOptions="Center" 
+               Grid.Column="0"/>
+            <Label Text="Групповые тренировки"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               VerticalOptions="Center"
+               TextColor="Black"
+               FontAttributes="Bold"
+               FontSize="28"
+               Grid.Column="1"
+                />
+        </Grid>
+    </Shell.TitleView>
+
     <ContentPage.Content>
         <StackLayout Padding="10" Spacing="10">
             <Button Text="Групповые тренеры" 

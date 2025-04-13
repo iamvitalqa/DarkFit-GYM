@@ -27,7 +27,7 @@ namespace DarkFit_app
         }
         private async Task LoadTrainerInfo(string id)
         {
-            string connectionString = "Host=192.168.0.106;Port=5432;Database=DarkFit;Username=postgres;Password=admin;Timeout=15;";
+            string connectionString = DarkFitDatabase.ConnectionString;
             try
             {
                 using (var connection = new NpgsqlConnection(connectionString))

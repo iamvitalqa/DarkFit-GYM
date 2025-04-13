@@ -27,7 +27,7 @@ namespace DarkFit_app
         private async Task<bool> RegisterUser(string username, string password)
         {
             bool isRegistered = false;
-            string connectionString = "Host=192.168.0.106;Port=5432;Database=DarkFit;Username=postgres;Password=admin;Timeout=5;";
+            string connectionString = DarkFitDatabase.ConnectionString;
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 try
@@ -84,6 +84,7 @@ namespace DarkFit_app
                     Preferences.Set("Username", username);
                 }
                 Application.Current.MainPage = new AppShell(); // Переход на домашнюю страницу
+                await Shell.Current.GoToAsync("//PaymentPage");
             }
         }                    
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)

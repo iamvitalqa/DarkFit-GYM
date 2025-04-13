@@ -20,7 +20,7 @@ namespace DarkFit_app
         private async Task<bool> CheckLogin(string username, string password)
         {
             bool isValid = false;
-            string connectionString = "Host=192.168.0.106;Port=5432;Database=DarkFit;Username=postgres;Password=admin;Timeout=5;";
+            string connectionString = DarkFitDatabase.ConnectionString;
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 try
@@ -41,10 +41,11 @@ namespace DarkFit_app
         }
         private async void loginButton_Clicked(object sender, EventArgs e)
         {
-            string username = loginEntry.Text; // Предположим, что userEntry - это Entry для ввода имени пользователя
-            string password = passwordEntry.Text; // Предположим, что passEntry - это Entry для ввода пароля
+            string username = loginEntry.Text;
+            string password = passwordEntry.Text;
             bool rememberMe = rememberMeSwitch.IsToggled;
             bool isValid = await CheckLogin(username, password);
+
             if (isValid)
             {
                 if (rememberMe)
@@ -52,8 +53,17 @@ namespace DarkFit_app
                     Preferences.Set("IsLoggedIn", true);
                     Preferences.Set("Username", username);
                 }
+
                 await DisplayAlert("Успех!", "Вы успешно вошли.", "OK");
+
+                // Устанавливаем AppShell
                 Application.Current.MainPage = new AppShell();
+
+                // Небольшая задержка, чтобы Shell полностью инициализировался
+                //await Task.Delay(100);
+
+                // Переход к PaymentPage
+                await Shell.Current.GoToAsync("//PaymentPage");
             }
             else
             {

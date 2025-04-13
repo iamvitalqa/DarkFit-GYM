@@ -9,6 +9,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Extensions.DependencyInjection.Abstractions.dll",
 		"Microsoft.Extensions.Logging.Abstractions.dll",
 		"Npgsql.dll",
+		"Rg.Plugins.Popup.dll",
 		"System.Collections.Immutable.dll",
 		"System.Diagnostics.DiagnosticSource.dll",
 		"System.Text.Encodings.Web.dll",

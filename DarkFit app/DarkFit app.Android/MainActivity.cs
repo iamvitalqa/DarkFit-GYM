@@ -19,8 +19,9 @@ namespace DarkFit_app.Droid
             
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
             WebView.SetWebContentsDebuggingEnabled(true);
+            Rg.Plugins.Popup.Popup.Init(this);
+
 
             LoadApplication(new App());
         }

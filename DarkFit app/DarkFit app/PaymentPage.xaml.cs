@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarkFit_app.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -65,16 +66,7 @@ namespace DarkFit_app
             radioButton.Content = $"{originalPrice} ₽ (скидка {discount * 100}%): {discountedPrice:F2} ₽";
         }
 
-        private async void logoutButton_Clicked(object sender, EventArgs e)
-        {
-            bool confirmLogout = await DisplayAlert("Выход", "Вы уверены, что хотите выйти из аккаунта?", "Да", "Нет");
-            if (confirmLogout)
-            {
-                Preferences.Set("IsLoggedIn", false);
-                Preferences.Remove("Username");
-                Application.Current.MainPage = new AuthPage(); 
-            }
-        }
+        
 
         private async void depositButton_Clicked(object sender, EventArgs e)
         {
@@ -86,6 +78,12 @@ namespace DarkFit_app
             {
                 await DisplayAlert("Ошибка", "Введите корректную сумму пополнения.", "OK");
             }
+        }
+
+        private async void menuButton_Clicked(object sender, EventArgs e)
+        {
+            var popup = new MenuPopup();
+            await Rg.Plugins.Popup.Services.PopupNavigation.Instance.PushAsync(popup);
         }
     }
 }

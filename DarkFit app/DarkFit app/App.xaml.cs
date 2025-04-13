@@ -12,31 +12,33 @@ namespace DarkFit_app
         {
             InitializeComponent();
 
-            // Устанавливаем начальную страницу на AppShell
+            // Устанавливаем AppShell как главную страницу
             MainPage = new AppShell();
 
-            // Регистрация маршрутов, если это нужно
+            // Регистрируем маршруты
             Routing.RegisterRoute("TrainerInfoPage", typeof(TrainerInfoPage));
 
             Task.Run(async () =>
             {
                 bool isLoggedIn = Preferences.Get("IsLoggedIn", false);
 
-                MainThread.BeginInvokeOnMainThread(async () =>
+                await MainThread.InvokeOnMainThreadAsync(async () =>
                 {
                     if (isLoggedIn)
                     {
-                        // Переход на TrainersPage внутри Shell
+                        // Убедимся, что Shell полностью загружен перед навигацией
+                        //await Task.Delay(100); // небольшая задержка помогает в некоторых случаях
+
+                        // Навигация к нужной вкладке
                         await Shell.Current.GoToAsync("//PaymentPage");
                     }
                     else
                     {
-                        // Переход на AuthPage внутри Shell
+                        // Перенаправление на AuthPage
                         Application.Current.MainPage = new AuthPage();
                     }
                 });
             });
-
         }
 
 

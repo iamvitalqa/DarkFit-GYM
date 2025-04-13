@@ -34,7 +34,7 @@ namespace DarkFit_app
         public async Task<List<Trainers>> GetTrainersAsync()
         {
             var trainers = new List<Trainers>();
-            string connectionString = "Host=192.168.0.106;Port=5432;Database=DarkFit;Username=postgres;Password=admin;Timeout=15;";
+            string connectionString = DarkFitDatabase.ConnectionString;
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 try

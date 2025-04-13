@@ -2,36 +2,42 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DarkFit_app.AuthPage"
-             BackgroundColor="#f1f2f3">
+             
+             BackgroundColor="White">
     <StackLayout Padding="20" VerticalOptions="Center"  HorizontalOptions="Center">
+        
         <RelativeLayout HorizontalOptions="Center">
+            
             <Frame RelativeLayout.YConstraint="-70" BackgroundColor="White" WidthRequest="300" Margin="0,80,0,0" Padding="15" CornerRadius="25">
+                
                 <StackLayout>
+                    <Image Source="darkzorge" HeightRequest="200" />
                     <Label Text="Авторизация" 
                            FontSize="32" 
                            FontAttributes="Bold" 
                            HorizontalOptions="Center"
-                           TextColor="#4A4A4A"/>
+                           TextColor="Black"/>
                     <Entry Placeholder="Введите логин" 
                            FontSize="18" 
                            Margin="0,20,0,0"
                            HeightRequest="50" 
                            BackgroundColor="White"
-                           TextColor="#4A4A4A"
-                           PlaceholderColor="#A9A9A9"
+                           TextColor="Black"
+                           PlaceholderColor="BLACK"
                            x:Name="loginEntry"/>
                     <Entry Placeholder="Введите пароль" 
                            IsPassword="True"
                            FontSize="18" 
                            HeightRequest="50" 
                            BackgroundColor="White"
-                           TextColor="#4A4A4A"
-                           PlaceholderColor="#A9A9A9" x:Name="passwordEntry"/>
+                           TextColor="Black"
+                           PlaceholderColor="Black" x:Name="passwordEntry"/>
                 </StackLayout>
             </Frame>
         </RelativeLayout>
         <Button Text="Войти" 
                 Margin="0,20,0,0"
+                FontSize="18"
                 CornerRadius="25"
                 BackgroundColor="#1d3ade"
                 TextColor="AliceBlue"

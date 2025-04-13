@@ -7,6 +7,36 @@
        Shell.TitleColor="Black"
        Shell.TabBarBackgroundColor="White"
        Shell.UnselectedColor="Black">
+
+    <!-- <Shell.Resources>
+        <Style TargetType="ContentPage">
+            <Setter Property="Shell.TitleView">
+                <Setter.Value>
+                    <Grid ColumnDefinitions="Auto,*,Auto"
+                          VerticalOptions="Center"
+                          Padding="10,0">
+                       Левая иконка 
+                        <Image Source="darkfitich.jpg"
+                               HeightRequest="24"
+                               WidthRequest="24"
+                               VerticalOptions="Center" />
+
+                     Центрированный заголовок 
+                        <Label Text="{Binding Title}"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               VerticalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               Grid.Column="1" />
+                    </Grid>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Shell.Resources>
+    -->
+
+
     <TabBar>
         <ShellContent Title="Бар" Icon="bar_icon.png" Route="BarPage" >
             <ShellContent.Content>

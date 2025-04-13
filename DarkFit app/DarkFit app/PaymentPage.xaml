@@ -3,6 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DarkFit_app.PaymentPage" BackgroundColor="#f1f2f3"
              Title="Личный кабинет">
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="60,*,60"
+              VerticalOptions="Center">
+            <Image Source="darkfitCaption.png"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center" 
+                   Grid.Column="0"/>
+            <Label Text="Личный кабинет"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="28"
+                   Grid.Column="1"
+                    />
+            <ImageButton Source="Profile.png"  
+                WidthRequest="24"
+                         HeightRequest="24"
+                         BackgroundColor="Transparent"
+                         x:Name="menuButton"
+                         Clicked="menuButton_Clicked"
+                         Grid.Column="2"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center" />
+
+        </Grid>
+    </Shell.TitleView>
+
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="20" Padding="10">
@@ -50,14 +81,7 @@
                         <Button Text="Подтвердить" BackgroundColor="#1d3ade" TextColor="White" CornerRadius="25" />
                     </StackLayout>
                 </Frame>
-                <Button Text="Выйти" 
-                    x:Name="logoutButton"
-                        CornerRadius="25"
-                        
-                        
-                    BackgroundColor="#AC0000" 
-                    TextColor="White"
-                    Clicked="logoutButton_Clicked"/>
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

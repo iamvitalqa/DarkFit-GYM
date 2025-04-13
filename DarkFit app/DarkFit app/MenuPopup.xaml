@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    x:Class="DarkFit_app.Views.MenuPopup"
+    BackgroundColor="Transparent"
+    CloseWhenBackgroundIsClicked="True"
+    Padding="0">
+
+    <Grid VerticalOptions="Start" HorizontalOptions="End" Padding="10">
+        <Frame
+            Margin="0,35,0,0"
+            BackgroundColor="White" 
+            CornerRadius="10" 
+            Padding="10" 
+            HasShadow="True"
+            WidthRequest="180"
+            HorizontalOptions="End"
+            VerticalOptions="Start">
+            <StackLayout Spacing="10">
+                <Label Text="💰 Бонусы: 0₽" FontSize="24" TextColor="Black" />
+                <Label Text="⚙️ Настройки" FontSize="24" TextColor="Black" />
+                <Label Text="💬 Обратная связь" FontSize="24" TextColor="Black" />
+                <Label Text="🚪 Выйти" FontSize="24" TextColor="Red">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="logoutButton_Clicked" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </Frame>
+    </Grid>
+</popup:PopupPage>

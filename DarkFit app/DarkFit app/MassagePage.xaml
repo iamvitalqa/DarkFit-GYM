@@ -4,6 +4,28 @@
              x:Class="DarkFit_app.MassagePage"
              BackgroundColor="#f1f2f3"
              Title="DARKFIT SPA">
+
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="60,*,60"
+          VerticalOptions="Center">
+            <Image Source="darkfitCaption.png"
+               HorizontalOptions="Start"
+               VerticalOptions="Center" 
+               Grid.Column="0"/>
+            <Label Text="DARKFIT SPA"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               VerticalOptions="Center"
+               TextColor="Black"
+               FontAttributes="Bold"
+               FontSize="28"
+               Grid.Column="1"
+                />
+        </Grid>
+    </Shell.TitleView>
+
+
     <ContentPage.Content>
         <StackLayout Spacing="10" Padding="10">
             

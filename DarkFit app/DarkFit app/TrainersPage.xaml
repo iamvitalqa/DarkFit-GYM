@@ -4,6 +4,26 @@
              x:Class="DarkFit_app.TrainersPage" 
              BackgroundColor="#f1f2f3"
              Title="Персональные тренеры">
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="60,*,60"
+      VerticalOptions="Center">
+            <Image Source="darkfitCaption.png"
+           HorizontalOptions="Start"
+           VerticalOptions="Center" 
+           Grid.Column="0"/>
+            <Label Text="Персональные тренеры"
+           HorizontalOptions="Center"
+           HorizontalTextAlignment="Center"
+           VerticalOptions="Center"
+           TextColor="Black"
+           FontAttributes="Bold"
+           FontSize="28"
+           Grid.Column="1"
+            />
+        </Grid>
+    </Shell.TitleView>
+
     <ContentPage.Content>
         <CollectionView ItemsSource="{Binding Trainers}" Margin="5,0,5,0">
             <CollectionView.ItemsLayout>
