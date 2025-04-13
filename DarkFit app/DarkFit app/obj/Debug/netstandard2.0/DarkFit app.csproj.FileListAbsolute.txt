@@ -1,0 +1,50 @@
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.deps.json
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.dll
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\ref\DarkFit app.dll
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.pdb
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.csproj.AssemblyReference.cache
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.AssemblyInfoInputs.cache
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.AssemblyInfo.cs
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.csproj.CoreCompileInputs.cache
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\XamlC.stamp
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.dll
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\refint\DarkFit app.dll
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.pdb
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit_app.Properties.Resources.resources
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.csproj.GenerateResource.cache
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\AuthPage.xaml.g.cs
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\WelcomePage.xaml.g.cs
+D:\study\Дипломыч\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\ExamplePage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.deps.json
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.dll
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\ref\DarkFit app.dll
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.pdb
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.csproj.AssemblyReference.cache
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit_app.Properties.Resources.resources
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.csproj.GenerateResource.cache
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.GeneratedMSBuildEditorConfig.editorconfig
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\AuthPage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\BarPage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\BuyPage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\GroupsPage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\MassagePage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\PaymentPage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\PayPage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\RegisterPage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\TrainerInfoPage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\TrainersPage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\WelcomePage.xaml.g.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.AssemblyInfoInputs.cache
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.AssemblyInfo.cs
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.csproj.CoreCompileInputs.cache
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.sourcelink.json
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\XamlC.stamp
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.dll
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\refint\DarkFit app.dll
+D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.pdb

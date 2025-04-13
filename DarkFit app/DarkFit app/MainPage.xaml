@@ -1,0 +1,8 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarkFit_app.MainPage"
+             BackgroundColor="AliceBlue"
+             Title="Главная"
+             >
+    <Label Text="asddasd" FontSize="30" HorizontalOptions="CenterAndExpand" ></Label>
+</ContentPage>

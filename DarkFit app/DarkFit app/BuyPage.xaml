@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarkFit_app.BuyPage"
+             BackgroundColor="#f1f2f3"
+             Title="Корзина">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+
+            <!-- Фрейм для списка товаров в корзине -->
+            <Frame BackgroundColor="White" Padding="10" CornerRadius="10" Margin="10">
+                <CollectionView ItemsSource="{Binding CartItems}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="30" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding ProductImage}" 
+                                       HeightRequest="60" 
+                                       WidthRequest="60" 
+                                       Aspect="AspectFill"
+                                       Grid.Column="0" />
+
+                                <Label Text="{Binding ProductName}"
+                                       FontSize="22"
+                                       TextColor="Black"
+                                       VerticalTextAlignment="Center"
+                                       Grid.Column="1" />
+
+                                <Label Text="{Binding ProductCost, StringFormat='{0:C}'}"
+                                       FontSize="20"
+                                       TextColor="Black"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="End"
+                                       Grid.Column="2" />
+
+                                <!-- Кнопка удаления товара из корзины -->
+                                <ImageButton Source="close_icon.png"
+                                             x:Name="removeFromCart"
+                                             BackgroundColor="Transparent"
+                                             Clicked="removeFromCart_Clicked"
+                                             CommandParameter="{Binding}"
+                                             Grid.Column="3" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+
+            <!-- Фрейм для общей суммы и кнопки оплаты -->
+            <Frame BackgroundColor="White" Padding="10" CornerRadius="10" Margin="10">
+                <StackLayout Spacing="10">
+                    <Label Text="Всего к оплате:"
+                           FontSize="22"
+                           TextColor="Black"
+                           HorizontalOptions="Start" />
+
+                    <Label x:Name="TotalCostLabel"
+                           Text="{Binding TotalCost, StringFormat='{0:C}'}"
+                           FontSize="26"
+                           FontAttributes="Bold"
+                           TextColor="Green"
+                           HorizontalOptions="Start" />
+
+                    <Button Text="Перейти к оплате"
+                            CornerRadius="25"
+                            x:Name="paymentButton"
+                            FontSize="22"
+                            BackgroundColor="#8dbf42"
+                            TextColor="White"
+                            Command="{Binding ProceedToPaymentCommand}" />
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

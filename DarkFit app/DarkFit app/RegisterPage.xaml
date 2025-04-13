@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarkFit_app.RegisterPage"
+             BackgroundColor="#f1f2f3">
+    <StackLayout Padding="20" VerticalOptions="Center" HorizontalOptions="Center">
+        <RelativeLayout HorizontalOptions="Center">
+            <Frame RelativeLayout.YConstraint="-70" BackgroundColor="White" WidthRequest="300" Margin="0,80,0,0" Padding="15" CornerRadius="25">
+                <StackLayout>
+                    <Label Text="Регистрация" 
+                   FontSize="32" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"
+                   TextColor="#4A4A4A"/>
+                    <Entry Placeholder="Введите логин" 
+                   FontSize="18" 
+                   Margin="0,20,0,0"
+                   HeightRequest="50" 
+                   BackgroundColor="White"
+                   TextColor="#4A4A4A"
+                   PlaceholderColor="#A9A9A9"
+                   x:Name="loginEntry"/>
+                    <Entry Placeholder="Введите пароль" 
+                   IsPassword="True"
+                   FontSize="18" 
+                   HeightRequest="50" 
+                   BackgroundColor="White"
+                   TextColor="#4A4A4A"
+                   PlaceholderColor="#A9A9A9" x:Name="passwordEntry"/>
+                    <Entry Placeholder="Подтвердите пароль" 
+                   IsPassword="True"
+                   FontSize="18" 
+                   HeightRequest="50" 
+                   BackgroundColor="White"
+                   TextColor="#4A4A4A"
+                   PlaceholderColor="#A9A9A9" x:Name="passwordRepeatEntry"/>
+                </StackLayout>
+            </Frame>
+        </RelativeLayout>
+        <Button Text="Зарегистрироваться" 
+                CornerRadius="25"
+                BackgroundColor="#1d3ade"
+                TextColor="AliceBlue"
+                Margin="0,20,0,0"
+                x:Name="regButton" Clicked="regButton_Clicked"/>
+        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0">
+            <Label Text="Запомнить меня" 
+                FontSize="18" 
+                VerticalOptions="Center"
+                TextColor="Black" />
+            <Switch x:Name="rememberMeSwitch" IsToggled="False" OnColor="#1d3ade" ThumbColor="AliceBlue" />
+        </StackLayout>
+        <StackLayout  Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  Margin="0,20,0,0" >
+            <Label Text="У Вас уже есть аккаунт?" FontSize="18" HorizontalTextAlignment="Center" TextColor="#1d3ade">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Авторизуйтесь!" FontSize="18" FontAttributes="Bold" TextColor="#1d3ade" HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="backButton_Clicked" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarkFit_app.TrainersPage" 
+             BackgroundColor="#f1f2f3"
+             Title="Персональные тренеры">
+    <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding Trainers}" Margin="5,0,5,0">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="3" Spacing="5" HorizontalOptions="FillAndExpand">
+                        <ImageButton Source="{Binding Image}"
+                                         Aspect="AspectFill" 
+                                         HeightRequest="200" 
+                                         CornerRadius="10"
+                                         Clicked="ImageButton_Clicked" />
+                        <Label Text="{Binding Name}"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               TextColor="Black"
+                               HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

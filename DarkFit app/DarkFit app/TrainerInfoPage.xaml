@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarkFit_app.TrainerInfoPage"
+             Title="Информация о тренере"
+             BackgroundColor="#f1f2f3">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Frame CornerRadius="15" HasShadow="True" BackgroundColor="White" Padding="0">
+                <Image Source="{Binding Image}" 
+                       Aspect="AspectFill" 
+                       HeightRequest="400" 
+                       HorizontalOptions="FillAndExpand" />
+            </Frame>
+            <Frame CornerRadius="15" HasShadow="True" BackgroundColor="White" Padding="15">
+                <StackLayout Spacing="10">
+                    <Label Text="{Binding Name}"
+                           FontSize="30"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           HorizontalOptions="Center" />
+                    <Label Text="{Binding Description, FallbackValue='Описание тренера'}"
+                           FontSize="24"
+                           LineBreakMode="WordWrap"
+                           TextColor="DarkSlateGray" />
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="15" HasShadow="True" BackgroundColor="White" Padding="15">
+                <StackLayout Spacing="10">
+                    <Label Text="{Binding PriceList, FallbackValue='Стоимость занятий'}"
+                       FontSize="24"
+                       LineBreakMode="WordWrap"
+                       TextColor="DarkSlateGray" />
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="15" HasShadow="True" BackgroundColor="White" Padding="15">
+                <StackLayout Spacing="10">
+                    <Button Text="{Binding Phone}" x:Name="callTrainerButton" FontSize="24"  BackgroundColor="DarkSlateGray" Clicked="callTrainerButton_Clicked" TextColor="White" CornerRadius="25" />
+                    <Button Text="Прошу мне перезвонить" TextTransform="None" FontSize="24" BackgroundColor="#1d3ade" TextColor="White" CornerRadius="25" />
+                    <Button Text="💅 Написать в WhatsApp" x:Name="whatsappTrainerButton" TextTransform="None" FontSize="24" BackgroundColor="#8dbf42" Clicked="whatsappTrainerButton_Clicked" TextColor="White" CornerRadius="25" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

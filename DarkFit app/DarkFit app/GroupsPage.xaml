@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarkFit_app.GroupsPage"
+             BackgroundColor="#f1f2f3"
+             Title="Групповые тренировки">
+    <ContentPage.Content>
+        <StackLayout Padding="10" Spacing="10">
+            <Button Text="Групповые тренеры" 
+            CornerRadius="25"
+            Margin="0,0,0,0"
+            FontSize="18"
+            BackgroundColor="#1d3ade"
+            TextColor="AliceBlue"
+            x:Name="groupButton" Clicked="groupButton_Clicked"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button Text="＜"
+                        CornerRadius="25"
+                        BackgroundColor="#1d3ade"
+                        TextColor="White"
+                        FontSize="16"
+                        Grid.Column="0" />
+                <Label Text="25 нояб. – 1 дек. 24 г."
+                       FontSize="18"
+                       
+                       TextColor="Black"
+                       BackgroundColor="#f5f7f7"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       Grid.Column="1" />
+                <Button Text="＞"
+                        CornerRadius="25"
+                        BackgroundColor="#1d3ade"
+                        TextColor="White"
+                        FontSize="16"
+                        Grid.Column="2" />
+            </Grid>
+            <ScrollView>
+                <StackLayout Spacing="10">
+                    <StackLayout BackgroundColor="#f5f7f7">
+                        <Grid Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="понедельник" FontSize="16" TextColor="Black" Grid.Column="0" />
+                            <Label Text="25 ноября 2024 г." FontSize="14" TextColor="#666" Grid.Column="1" />
+                        </Grid>
+                        <Label Text="Нет тренировок" FontSize="14" TextColor="#999" Padding="10" />
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#f5f7f7">
+                        <Grid Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="вторник" FontSize="16" TextColor="Black" Grid.Column="0" />
+                            <Label Text="26 ноября 2024 г." FontSize="14" TextColor="#666" Grid.Column="1" />
+                        </Grid>
+                        <Label Text="Нет тренировок" FontSize="14" TextColor="#999" Padding="10" />
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#f5f7f7">
+                        <Grid Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="среда" FontSize="16" TextColor="Black" Grid.Column="0" />
+                            <Label Text="27 ноября 2024 г." FontSize="14" TextColor="#666" Grid.Column="1" />
+                        </Grid>
+                        <Label Text="Нет тренировок" FontSize="14" TextColor="#999" Padding="10" />
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#f5f7f7">
+                        <Grid Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="четверг" FontSize="16" TextColor="Black" Grid.Column="0" />
+                            <Label Text="28 ноября 2024 г." FontSize="14" TextColor="#666" Grid.Column="1" />
+                        </Grid>
+                        <Label Text="Нет тренировок" FontSize="14" TextColor="#999" Padding="10" />
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#f5f7f7">
+                        <Grid Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="пятница" FontSize="16" TextColor="Black" Grid.Column="0" />
+                            <Label Text="29 ноября 2024 г." FontSize="14" TextColor="#666" Grid.Column="1" />
+                        </Grid>
+                        <Label Text="Нет тренировок" FontSize="14" TextColor="#999" Padding="10" />
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#f5f7f7">
+                        <Grid Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="суббота" FontSize="16" TextColor="Black" Grid.Column="0" />
+                            <Label Text="30 ноября 2024 г." FontSize="14" TextColor="#666" Grid.Column="1" />
+                        </Grid>
+                        <Label Text="Нет тренировок" FontSize="14" TextColor="#999" Padding="10" />
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#f5f7f7">
+                        <Grid Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="воскресенье" FontSize="16" TextColor="Black" Grid.Column="0" />
+                            <Label Text="1 декабря 2024 г." FontSize="14" TextColor="#666" Grid.Column="1" />
+                        </Grid>
+                        <Label Text="Нет тренировок" FontSize="14" TextColor="#999" Padding="10" />
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

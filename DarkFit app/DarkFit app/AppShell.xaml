@@ -1,0 +1,42 @@
+﻿<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:DarkFit_app"
+       x:Class="DarkFit_app.AppShell"
+       Shell.BackgroundColor="White"
+       Shell.ForegroundColor="Black"
+       Shell.TitleColor="Black"
+       Shell.TabBarBackgroundColor="White"
+       Shell.UnselectedColor="Black">
+    <TabBar>
+        <ShellContent Title="Бар" Icon="bar_icon.png" Route="BarPage" >
+            <ShellContent.Content>
+                <local:BarPage />
+            </ShellContent.Content>
+        </ShellContent>
+        <ShellContent Title="Тренеры" Icon="trainers_icon.png" Route="TrainersPage" >
+            <ShellContent.Content>
+                <local:TrainersPage />
+            </ShellContent.Content>
+        </ShellContent>
+        <ShellContent Title="Групповые" Icon="groups_icon.png" Route="GroupsPage" >
+            <ShellContent.Content>
+                <local:GroupsPage />
+            </ShellContent.Content>
+        </ShellContent>
+        <ShellContent Title="Массаж" Icon="massage_icon.png" Route="MassagePage" >
+            <ShellContent.Content>
+                <local:MassagePage />
+            </ShellContent.Content>
+        </ShellContent>
+        <ShellContent Title="Личный кабинет" Icon="home.png" Route="PaymentPage" >
+            <ShellContent.Content>
+                <local:PaymentPage />
+            </ShellContent.Content>
+        </ShellContent>
+    </TabBar>
+    <ShellContent Route="TrainerInfoPage" ContentTemplate="{DataTemplate local:TrainerInfoPage}" />
+    <ShellContent Route="AuthPage">
+        <local:AuthPage />
+    </ShellContent>
+    <ShellContent Route="AuthPage" ContentTemplate="{DataTemplate local:PaymentPage}" />
+</Shell>

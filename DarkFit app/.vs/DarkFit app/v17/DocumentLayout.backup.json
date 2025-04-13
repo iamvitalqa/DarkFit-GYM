@@ -1,0 +1,81 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\study\\Diplomich\\DarkFit app\\DarkFit app\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit app\\darkfit app\\darkfit app\\massagepage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\massagepage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit app\\darkfit app\\darkfit app\\massagepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\massagepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 224,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 131,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MassagePage.xaml",
+              "DocumentMoniker": "D:\\study\\Diplomich\\DarkFit app\\DarkFit app\\DarkFit app\\MassagePage.xaml",
+              "RelativeDocumentMoniker": "DarkFit app\\MassagePage.xaml",
+              "ToolTip": "D:\\study\\Diplomich\\DarkFit app\\DarkFit app\\DarkFit app\\MassagePage.xaml",
+              "RelativeToolTip": "DarkFit app\\MassagePage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-15T13:32:59.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MassagePage.xaml.cs",
+              "DocumentMoniker": "D:\\study\\Diplomich\\DarkFit app\\DarkFit app\\DarkFit app\\MassagePage.xaml.cs",
+              "RelativeDocumentMoniker": "DarkFit app\\MassagePage.xaml.cs",
+              "ToolTip": "D:\\study\\Diplomich\\DarkFit app\\DarkFit app\\DarkFit app\\MassagePage.xaml.cs",
+              "RelativeToolTip": "DarkFit app\\MassagePage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T10:19:38.438Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 31,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

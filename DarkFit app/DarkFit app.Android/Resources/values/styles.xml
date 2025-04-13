@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+	<style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="colorPrimary">#1d3ade</item>
+		<item name="colorPrimaryDark">@android:color/black</item>
+		<item name="colorAccent">#1d3ade</item>
+		<item name="android:fontFamily">@null</item>
+
+		<!-- Убираем настройки шрифта -->
+
+		<!-- Устанавливаем белый цвет фона окна -->
+		<item name="android:navigationBarColor">@android:color/black</item>
+	</style>
+
+
+
+
+
+
+
+
+</resources>
