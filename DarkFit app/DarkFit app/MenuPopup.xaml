@@ -21,7 +21,11 @@
             <StackLayout Spacing="10">
                 <Label Text="💰 Бонусы: 0₽" FontSize="24" TextColor="Black" />
                 <Label Text="⚙️ Настройки" FontSize="24" TextColor="Black" />
-                <Label Text="💬 Обратная связь" FontSize="24" TextColor="Black" />
+                <Label Text="💬 Обратная связь" FontSize="24" TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="feedbackButton_CLicked"  />
+                    </Label.GestureRecognizers>
+                </Label>
                 <Label Text="🚪 Выйти" FontSize="24" TextColor="Red">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="logoutButton_Clicked" />

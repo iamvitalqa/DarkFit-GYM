@@ -3,6 +3,7 @@ using System;
 using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms;
+using Rg.Plugins.Popup.Services;
 
 
 namespace DarkFit_app.Views
@@ -30,6 +31,24 @@ namespace DarkFit_app.Views
                 Application.Current.MainPage = new AuthPage();
             }
         }
+
+
+        private async void feedbackButton_CLicked(object sender, EventArgs e)
+        {
+            int userId = Preferences.Get("UserId", -1);
+            if (userId != -1)
+            {
+                await PopupNavigation.Instance.PushAsync(new FeedbackPopup(userId));
+            }
+            else
+            {
+                await DisplayAlert("Ошибка", "Вы не авторизованы.", "OK");
+            }
+
+        }
+
+
+
 
     }
 }

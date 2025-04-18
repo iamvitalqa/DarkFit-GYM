@@ -17,52 +17,82 @@ namespace DarkFit_app
 		{
 			InitializeComponent();
 		}
-        private async Task<bool> CheckLogin(string username, string password)
+        //private async Task<bool> CheckLogin(string username, string password)
+        //{
+        //    bool isValid = false;
+        //    string connectionString = DarkFitDatabase.ConnectionString;
+        //    using (var connection = new NpgsqlConnection(connectionString))
+        //    {
+        //        try
+        //        {
+        //            await connection.OpenAsync();
+        //            var command = new NpgsqlCommand("SELECT COUNT(*) FROM users WHERE user_login = @username AND user_password = @password", connection);
+        //            command.Parameters.AddWithValue("@username", username);
+        //            command.Parameters.AddWithValue("@password", password);
+        //            int count = Convert.ToInt32(await command.ExecuteScalarAsync());
+        //            isValid = count > 0;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            await DisplayAlert("Ошибка подключения!", $"Не удалось подключиться к базе данных: {ex.Message}", "Понял");
+        //        }
+        //    }
+        //    return isValid;
+        //}
+
+
+
+
+
+
+        private async Task<int?> GetUserId(string username, string password)
         {
-            bool isValid = false;
             string connectionString = DarkFitDatabase.ConnectionString;
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 try
                 {
                     await connection.OpenAsync();
-                    var command = new NpgsqlCommand("SELECT COUNT(*) FROM users WHERE user_login = @username AND user_password = @password", connection);
+                    var command = new NpgsqlCommand("SELECT user_id FROM users WHERE user_login = @username AND user_password = @password", connection);
                     command.Parameters.AddWithValue("@username", username);
                     command.Parameters.AddWithValue("@password", password);
-                    int count = Convert.ToInt32(await command.ExecuteScalarAsync());
-                    isValid = count > 0;
+                    var result = await command.ExecuteScalarAsync();
+                    if (result != null && result != DBNull.Value)
+                        return Convert.ToInt32(result);
                 }
                 catch (Exception ex)
                 {
                     await DisplayAlert("Ошибка подключения!", $"Не удалось подключиться к базе данных: {ex.Message}", "Понял");
                 }
             }
-            return isValid;
+            return null;
         }
+
+
+
         private async void loginButton_Clicked(object sender, EventArgs e)
         {
             string username = loginEntry.Text;
             string password = passwordEntry.Text;
             bool rememberMe = rememberMeSwitch.IsToggled;
-            bool isValid = await CheckLogin(username, password);
 
-            if (isValid)
+            int? userId = await GetUserId(username, password);
+
+            if (userId.HasValue)
             {
+                // сохраняем в Preferences
+                Preferences.Set("UserId", userId.Value);
+
                 if (rememberMe)
                 {
                     Preferences.Set("IsLoggedIn", true);
                     Preferences.Set("Username", username);
+                    Preferences.Set("UserId", userId.Value);
                 }
 
                 await DisplayAlert("Успех!", "Вы успешно вошли.", "OK");
 
-                // Устанавливаем AppShell
                 Application.Current.MainPage = new AppShell();
-
-                // Небольшая задержка, чтобы Shell полностью инициализировался
-                //await Task.Delay(100);
-
-                // Переход к PaymentPage
                 await Shell.Current.GoToAsync("//PaymentPage");
             }
             else

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    x:Class="DarkFit_app.Views.FeedbackPopup"
+    BackgroundColor="#80000000"
+    CloseWhenBackgroundIsClicked="False">
+
+    <Grid Padding="20" VerticalOptions="CenterAndExpand">
+        <Frame BackgroundColor="White" Padding="20" CornerRadius="10" HasShadow="True">
+            <StackLayout Spacing="15">
+
+                <!-- Заголовок -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Обратная связь"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           Grid.Column="0"
+                           VerticalOptions="Center"/>
+
+                    <Button Text="X"
+                            Grid.Column="1"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            Clicked="OnCloseButtonClicked"/>
+                </Grid>
+
+                <!-- Подсказка -->
+                <Label Text="Если у Вас есть предложения, пожелания или отзыв — Вы можете связаться с нами через данную форму. Сообщения из неё видит только руководитель клуба."
+                       FontSize="13"
+                       TextColor="Black"/>
+
+                <!-- Имя -->
+                <Entry x:Name="NameEntry" Placeholder="Ваше имя"/>
+
+                <!-- Анонимность -->
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="AnonCheckbox" CheckedChanged="OnAnonCheckedChanged"/>
+                    <Label Text="Оставить анонимно"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <!-- Сообщение -->
+                <Editor x:Name="MessageEditor"
+                        Placeholder="Текст сообщения:"
+                        HeightRequest="100"/>
+
+                <!-- Кнопка отправки -->
+                <Button Text="Отправить"
+                        FontSize="20"
+                        BackgroundColor="#0033A1"
+                        TextColor="White"
+                        Clicked="OnSubmitClicked"/>
+
+            </StackLayout>
+        </Frame>
+    </Grid>
+</popup:PopupPage>
