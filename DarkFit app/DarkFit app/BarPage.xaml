@@ -2,110 +2,130 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DarkFit_app"
+             x:Class="DarkFit_app.BarPage"
              Title="DARKFIT BAR"
-             BackgroundColor="#f1f2f3"
-             x:Class="DarkFit_app.BarPage">
+             BackgroundColor="#f1f2f3">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BoolToSymbolConverter x:Key="BoolToSymbolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <Shell.TitleView>
-        <Grid ColumnDefinitions="60,*,60"
-          VerticalOptions="Center">
-                <Image Source="darkfitCaption.png"
-               HorizontalOptions="Start"
-               VerticalOptions="Center" 
-               Grid.Column="0"/>
+        <Grid ColumnDefinitions="60,*,60" VerticalOptions="Center">
+            <Image Source="darkfitCaption.png"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Grid.Column="0" />
             <Label Text="DARKFIT BAR"
-               HorizontalOptions="Center"
-               HorizontalTextAlignment="Center"
-               VerticalOptions="Center"
-               TextColor="Black"
-               FontAttributes="Bold"
-               FontSize="28"
-               Grid.Column="1"
-                />
-
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Grid.Column="1" />
             <ImageButton Source="korzina.png"
-             HeightRequest="40"
-             WidthRequest="40"
-             BackgroundColor="Transparent"
-             VerticalOptions="Center"
-             HorizontalOptions="Center"
-             Clicked="cartButton_Clicked"
-             Grid.Column="2"/>
-
+                         HeightRequest="40"
+                         WidthRequest="40"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         Clicked="cartButton_Clicked"
+                         Grid.Column="2" />
         </Grid>
     </Shell.TitleView>
 
-    <ContentPage.Content>
-        <StackLayout Padding="10">
-            <!-- Фрейм для выбора категории с кнопкой корзины -->
-            <Frame BackgroundColor="White" Padding="10" CornerRadius="10" Margin="10,0,10,10">
-                <Grid VerticalOptions="Center">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="50" />
-                    </Grid.ColumnDefinitions>
-
-                    <Picker x:Name="CategoryPicker" 
-                            Title="Выберите категорию" 
-                            FontSize="25"
-                            VerticalOptions="Center"
-                            VerticalTextAlignment="Center"
-                            HorizontalTextAlignment="Start"
-                            HeightRequest="70"
-                            ItemsSource="{Binding Categories}"
-                            SelectedItem="{Binding SelectedCategory, Mode=TwoWay}" 
-                            ItemDisplayBinding="{Binding ProductTypeName}"
-                            Grid.Column="0" />
-
-                    
-                </Grid>
-            </Frame>
-
-            <!-- Фрейм для списка товаров -->
-            <Frame BackgroundColor="White" Padding="10" CornerRadius="10">
-                <CollectionView ItemsSource="{Binding FilteredProducts}" 
-                                HorizontalOptions="FillAndExpand">
+    <Grid>
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="10">
+                <CollectionView ItemsSource="{Binding ProductGroups}" Margin="0,10,0,0" SelectionMode="None">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Padding="5" ColumnSpacing="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="80" />
-                                </Grid.ColumnDefinitions>
-                                <Image Source="{Binding ProductImage}" 
-                                       HeightRequest="50" 
-                                       WidthRequest="50" 
-                                       Aspect="AspectFill"
-                                       Grid.Column="0" />
-                                <Label Text="{Binding ProductName}"
-                                       FontSize="22"
-                                       TextColor="Black"
-                                       VerticalTextAlignment="Center"
-                                       Grid.Column="1" />
-                                <StackLayout Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End">
-                                    <Button Text="Купить"
-                                            x:Name="buyButton"
-                                            CornerRadius="20"
-                                            TextTransform="None"
-                                            FontAttributes="Bold"
-                                            FontSize="20"
-                                            BackgroundColor="#8dbf42"
-                                            TextColor="White"
-                                            Clicked="buyButton_Clicked"
-                                            Command="{Binding BuyCommand}" />
-                                    <Label Text="{Binding ProductCost, StringFormat='{0:C}'}"
+                            <StackLayout Padding="5" BackgroundColor="White">
+                                <!-- Заголовок категории -->
+                                <Grid Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding Name}" FontSize="20" TextColor="Black" />
+                                    <Label Text="{Binding IsExpanded, Converter={StaticResource BoolToSymbolConverter}}"
                                            FontSize="20"
                                            TextColor="Black"
-                                           VerticalTextAlignment="Center"
-                                           HorizontalTextAlignment="Center" />
+                                           Grid.Column="1" />
+
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:BarPage}}, Path=BindingContext.ToggleExpandCommand}"
+                                            CommandParameter="{Binding .}" />
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+
+                                <!-- Продукты -->
+                                <StackLayout IsVisible="{Binding IsExpanded}" Padding="10,0,0,10">
+                                    <StackLayout BindableLayout.ItemsSource="{Binding Products}">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate>
+                                                <Frame BorderColor="#e0e0e0"
+                                                       BackgroundColor="#fafafa"
+                                                       CornerRadius="8"
+                                                       Padding="10"
+                                                       Margin="0,5,0,5">
+                                                    <Grid ColumnDefinitions="80,*,100" ColumnSpacing="10">
+                                                        <Image Source="{Binding ProductImage}"
+                                                               HeightRequest="50"
+                                                               WidthRequest="50"
+                                                               Aspect="AspectFill"
+                                                               Grid.Column="0" />
+                                                        <Label Text="{Binding ProductName}"
+                                                               FontSize="18"
+                                                               VerticalOptions="Center"
+                                                               Grid.Column="1"
+                                                               TextColor="Black" />
+                                                        <StackLayout Grid.Column="2" VerticalOptions="Center">
+                                                            <Button Text="Купить"
+                                                                    FontSize="14"
+                                                                    CornerRadius="15"
+                                                                    Clicked="BuyButton_Clicked"
+                                                                    BackgroundColor="#8dbf42"
+                                                                    TextColor="White" />
+                                                            <Label Text="{Binding ProductCost, StringFormat='{0:C}'}"
+                                                                   FontSize="16"
+                                                                   HorizontalTextAlignment="Center" />
+                                                        </StackLayout>
+                                                    </Grid>
+                                                </Frame>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </StackLayout>
                                 </StackLayout>
-                            </Grid>
+                            </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-            </Frame>
-        </StackLayout>
-    </ContentPage.Content>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Toast -->
+        <Frame x:Name="ToastFrame"
+               BackgroundColor="#323232"
+               CornerRadius="12"
+               Padding="12,8"
+               IsVisible="False"
+               Opacity="0"
+               HorizontalOptions="Center"
+               VerticalOptions="End"
+               Margin="20"
+               HasShadow="True">
+            <Label x:Name="ToastLabel"
+                   TextColor="White"
+                   FontSize="16"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Text="" />
+        </Frame>
+    </Grid>
 </ContentPage>

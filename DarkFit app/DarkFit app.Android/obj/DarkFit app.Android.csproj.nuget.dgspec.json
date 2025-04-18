@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[2.1.0, )"
             },
+            "Syncfusion.Xamarin.Expander": {
+              "target": "Package",
+              "version": "[29.1.38, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.8.1, )"

@@ -73,8 +73,10 @@ namespace DarkFit_app
 
         private async void ProceedToPayment()
         {
-            await Application.Current.MainPage.DisplayAlert("Оплата", "Перенаправление к оплате...", "OK");
-            await Application.Current.MainPage.Navigation.PushAsync(new PayPage(TotalCost));
+
+            var cost = this.TotalCost;
+            await Application.Current.MainPage.Navigation.PushAsync(new PayPage(cost));
+            Console.WriteLine("Передаём сумму: " + TotalCost);
         }
 
         protected void OnPropertyChanged(string propertyName)

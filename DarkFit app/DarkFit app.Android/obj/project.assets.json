@@ -89,6 +89,53 @@
           }
         }
       },
+      "Syncfusion.Licensing/29.1.38": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid90/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid90/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.Core/29.1.38": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "29.1.38",
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "lib/MonoAndroid10.0/Syncfusion.Core.XForms.Android.dll": {},
+          "lib/MonoAndroid10.0/Syncfusion.Core.XForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/MonoAndroid10.0/Syncfusion.Core.XForms.Android.dll": {},
+          "lib/MonoAndroid10.0/Syncfusion.Core.XForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.Expander/29.1.38": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "29.1.38",
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "compile": {
+          "lib/MonoAndroid10.0/Syncfusion.Expander.XForms.Android.dll": {},
+          "lib/MonoAndroid10.0/Syncfusion.Expander.XForms.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/MonoAndroid10.0/Syncfusion.Expander.XForms.Android.dll": {},
+          "lib/MonoAndroid10.0/Syncfusion.Expander.XForms.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -2678,6 +2725,93 @@
         "rg.plugins.popup.nuspec"
       ]
     },
+    "Syncfusion.Licensing/29.1.38": {
+      "sha512": "EdYR9p6VZHrqZmVgotDB23G5Ko5FLTwm5mL3C/bKgCrBuGz+Be1iptuMXGDQLGvR6weA8cwkQ959M+oKGkhUaQ==",
+      "type": "package",
+      "path": "syncfusion.licensing/29.1.38",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net462/Syncfusion.Licensing.dll",
+        "lib/net8.0/Syncfusion.Licensing.dll",
+        "lib/net9.0/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.29.1.38.nupkg.sha512",
+        "syncfusion.licensing.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Xamarin.Core/29.1.38": {
+      "sha512": "NLuxZCPZUXqlYHEJfdnRNCCpg3y2jiAh87zkG+GjnWJh3WRH0HU9MFClJhpLNrfvq69KuUjB32NMr+iTcBcC9Q==",
+      "type": "package",
+      "path": "syncfusion.xamarin.core/29.1.38",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/MonoAndroid10.0/Syncfusion.Core.XForms.Android.dll",
+        "lib/MonoAndroid10.0/Syncfusion.Core.XForms.dll",
+        "lib/MonoAndroid10.0/Syncfusion.Core.XForms.xml",
+        "lib/Xamarin.Mac/Syncfusion.Core.XForms.dll",
+        "lib/Xamarin.Mac/Syncfusion.Core.XForms.macOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Core.XForms.xml",
+        "lib/netstandard2.0/Syncfusion.Core.XForms.dll",
+        "lib/netstandard2.0/Syncfusion.Core.XForms.xml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP.pri",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/Syncfusion.Core.XForms.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/ClearButtonViewVisibleIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/DropDownIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/ToggleCollapsedIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/ToggleVisibleIcon.xaml",
+        "lib/uap10.0/Syncfusion.Core.XForms.dll",
+        "lib/uap10.0/Syncfusion.Core.XForms.xml",
+        "syncfusion.xamarin.core.29.1.38.nupkg.sha512",
+        "syncfusion.xamarin.core.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Xamarin.Expander/29.1.38": {
+      "sha512": "sjIxKIOsG/aGOj7sHYOt7yhIA113RNpq7VC9zybA5gNUeGDJYktqg/lGqHtGFeF1qaLq1V/Spde1ktNT5riE+g==",
+      "type": "package",
+      "path": "syncfusion.xamarin.expander/29.1.38",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/MonoAndroid10.0/Syncfusion.Expander.XForms.Android.dll",
+        "lib/MonoAndroid10.0/Syncfusion.Expander.XForms.dll",
+        "lib/MonoAndroid10.0/Syncfusion.Expander.XForms.xml",
+        "lib/Xamarin.iOS10/Syncfusion.Expander.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Expander.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Expander.XForms.xml",
+        "lib/netstandard2.0/Syncfusion.Expander.XForms.dll",
+        "lib/netstandard2.0/Syncfusion.Expander.XForms.xml",
+        "lib/uap10.0/Syncfusion.Expander.XForms.UWP.XML",
+        "lib/uap10.0/Syncfusion.Expander.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.Expander.XForms.UWP.pri",
+        "lib/uap10.0/Syncfusion.Expander.XForms.UWP/Accordion/Accordion.xaml",
+        "lib/uap10.0/Syncfusion.Expander.XForms.UWP/Expander/Expander.xaml",
+        "lib/uap10.0/Syncfusion.Expander.XForms.UWP/LayoutTransformControl/LayoutTransformControl.xaml",
+        "lib/uap10.0/Syncfusion.Expander.XForms.UWP/Syncfusion.Expander.XForms.UWP.xr.xml",
+        "lib/uap10.0/Syncfusion.Expander.XForms.UWP/Themes/Generic.xaml",
+        "lib/uap10.0/Syncfusion.Expander.XForms.dll",
+        "lib/uap10.0/Syncfusion.Expander.XForms.xml",
+        "syncfusion.xamarin.expander.29.1.38.nupkg.sha512",
+        "syncfusion.xamarin.expander.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
     "System.Buffers/4.5.1": {
       "sha512": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
       "type": "package",
@@ -5001,6 +5135,7 @@
       "DarkFit app >= 1.0.0",
       "Npgsql >= 8.0.6",
       "Rg.Plugins.Popup >= 2.1.0",
+      "Syncfusion.Xamarin.Expander >= 29.1.38",
       "Xamarin.Essentials >= 1.8.1",
       "Xamarin.Forms >= 5.0.0.2662"
     ]
@@ -5060,6 +5195,10 @@
           "Rg.Plugins.Popup": {
             "target": "Package",
             "version": "[2.1.0, )"
+          },
+          "Syncfusion.Xamarin.Expander": {
+            "target": "Package",
+            "version": "[29.1.38, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",

@@ -1,110 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DarkFit_app"
              x:Class="DarkFit_app.MassagePage"
-             BackgroundColor="#f1f2f3"
-             Title="DARKFIT SPA">
-
+             Title="Наши услуги"
+             BackgroundColor="#f5f5f5">
 
     <Shell.TitleView>
         <Grid ColumnDefinitions="60,*,60"
-          VerticalOptions="Center">
+              VerticalOptions="Center">
             <Image Source="darkfitCaption.png"
-               HorizontalOptions="Start"
-               VerticalOptions="Center" 
-               Grid.Column="0"/>
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center" 
+                   Grid.Column="0"/>
             <Label Text="DARKFIT SPA"
-               HorizontalOptions="Center"
-               HorizontalTextAlignment="Center"
-               VerticalOptions="Center"
-               TextColor="Black"
-               FontAttributes="Bold"
-               FontSize="28"
-               Grid.Column="1"
-                />
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="28"
+                   Grid.Column="1"/>
         </Grid>
     </Shell.TitleView>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BoolToSymbolConverter x:Key="BoolToSymbolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <ContentPage.Content>
-        <StackLayout Spacing="10" Padding="10">
-            
+    <ScrollView>
+        <StackLayout Padding="10" Spacing="10">
             <Button Text="Записаться"
                     BackgroundColor="#1d3ade"
                     TextColor="White"
                     CornerRadius="25"
-                    FontSize="16"
-                    VerticalOptions="Center" />
-            <Label Text="У Вас нет предстоящих записей"
-                   FontSize="18"
-                   TextColor="#666"
-                   HorizontalTextAlignment="Center" />
-            <Label Text="Наши услуги"
-                   FontSize="25"
-                   HorizontalTextAlignment="Center"
-                   TextColor="Black"
-                   FontAttributes="Bold"
-                   Margin="0,20,0,10" />
-            <ScrollView>
-                <StackLayout Spacing="5">
-                    <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True" Padding="10">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Label Text="Баночный массаж"
-                                   FontSize="16"
-                                   TextColor="Black"
-                                   VerticalOptions="Center" />
-                            <Button Text="+"
-                                    BackgroundColor="Transparent"
-                                    TextColor="#1d3ade"
-                                    FontAttributes="Bold"
-                                    FontSize="18"
-                                    Command="{Binding ExpandServiceCommand}"
-                                    Grid.Column="1" />
-                        </Grid>
-                    </Frame>
-                    <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True" Padding="10">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Label Text="Дополнительные услуги"
-                                   FontSize="16"
-                                   TextColor="Black"
-                                   VerticalOptions="Center" />
-                            <Button Text="+"
-                                    BackgroundColor="Transparent"
-                                    TextColor="#1d3ade"
-                                    FontAttributes="Bold"
-                                    FontSize="18"
-                                    Command="{Binding ExpandServiceCommand}"
-                                    Grid.Column="1" />
-                        </Grid>
-                    </Frame>
-                    <Frame BackgroundColor="White" CornerRadius="10" HasShadow="True" Padding="10">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Label Text="Комплекс 'Идеальный джентльмен'"
-                                   FontSize="16"
-                                   TextColor="Black"
-                                   VerticalOptions="Center" />
-                            <Button Text="+"
-                                    BackgroundColor="Transparent"
-                                    TextColor="#1d3ade"
-                                    FontAttributes="Bold"
-                                    FontSize="18"
-                                    Grid.Column="1" />
-                        </Grid>
-                    </Frame>
-                </StackLayout>
-            </ScrollView>
+                    FontSize="22"
+                    HeightRequest="50"
+                    
+                    HorizontalOptions="FillAndExpand" />
+
+            <CollectionView ItemsSource="{Binding MassageGroups}"
+                            Margin="0,10,0,0"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="5" BackgroundColor="White" >
+                            <!-- Заголовок категории с тапом -->
+                            <StackLayout>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ToggleExpandTapped" />
+                                </StackLayout.GestureRecognizers>
+
+                                <Grid Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding Name}" FontSize="20" TextColor="Black" />
+                                    <Label Text="{Binding IsExpanded, Converter={StaticResource BoolToSymbolConverter}}"
+                                           FontSize="20"
+                                           TextColor="Black"
+                                           Grid.Column="1" />
+                                </Grid>
+                            </StackLayout>
+
+                            <!-- Список массажа внутри категории -->
+                            <StackLayout IsVisible="{Binding IsExpanded}" Padding="10,0,0,10">
+                                <StackLayout BindableLayout.ItemsSource="{Binding Massages}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame BorderColor="#e0e0e0"
+                                                   BackgroundColor="#fafafa"
+                                                   CornerRadius="8"
+                                                   Padding="10"
+                                                   Margin="0,5,0,5">
+                                                <StackLayout>
+                                                    <Label Text="{Binding Name}" FontSize="18" TextColor="Black" />
+                                                    <Label Text="{Binding Description}" FontSize="14" TextColor="#666" />
+                                                    <Label Text="{Binding Cost, StringFormat='{0}₽'}"
+                                                           FontSize="16"
+                                                           TextColor="Green"
+                                                           FontAttributes="Bold" />
+                                                </StackLayout>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>

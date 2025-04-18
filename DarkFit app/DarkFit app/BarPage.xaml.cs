@@ -1,12 +1,10 @@
 ﻿using Npgsql;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,138 +15,173 @@ namespace DarkFit_app
     {
         private readonly string connectionString = DarkFitDatabase.ConnectionString;
 
-        public ObservableCollection<CategoryViewModel> Categories { get; set; }
-        public ObservableCollection<Product> AllProducts { get; set; }
-        private CategoryViewModel _selectedCategory;
-        public CategoryViewModel SelectedCategory
-        {
-            get => _selectedCategory;
-            set
-            {
-                if (_selectedCategory != value)
-                {
-                    _selectedCategory = value;
-                    OnPropertyChanged();
-                    FilterProducts();
-                }
-            }
-        }
-        public ObservableCollection<Product> FilteredProducts { get; set; }
+        public ObservableCollection<ProductGroup> ProductGroups { get; set; }
+        public Command<ProductGroup> ToggleExpandCommand { get; }
 
         public BarPage()
         {
             InitializeComponent();
-            Categories = new ObservableCollection<CategoryViewModel>();
-            AllProducts = new ObservableCollection<Product>();
-            FilteredProducts = new ObservableCollection<Product>();
+            ProductGroups = new ObservableCollection<ProductGroup>();
+            ToggleExpandCommand = new Command<ProductGroup>(OnToggleExpand);
             BindingContext = this;
-            LoadDataFromDatabase();
+            LoadCategories();
         }
 
-        private async void LoadDataFromDatabase()
+        private async void LoadCategories()
         {
-            using (var connection = new NpgsqlConnection(connectionString))
+            try
             {
-                try
+                using (var connection = new NpgsqlConnection(connectionString))
                 {
                     await connection.OpenAsync();
 
-                    // Загрузка категорий
-                    var categoriesQuery = "SELECT product_type_id, product_type_name FROM product_type";
-                    var command = new NpgsqlCommand(categoriesQuery, connection);
-                    var reader = await command.ExecuteReaderAsync();
-                    var categoriesList = new List<CategoryViewModel>();
+                    var query = "SELECT product_type_id, product_type_name FROM product_type";
+                    var cmd = new NpgsqlCommand(query, connection);
+                    var reader = await cmd.ExecuteReaderAsync();
+
+                    var categories = new ObservableCollection<ProductGroup>();
+
                     while (await reader.ReadAsync())
                     {
-                        categoriesList.Add(new CategoryViewModel
+                        categories.Add(new ProductGroup
                         {
                             ProductTypeId = reader.GetInt32(0),
-                            ProductTypeName = reader.GetString(1)
+                            Name = reader.GetString(1),
+                            Products = new ObservableCollection<Product>(),
+                            IsExpanded = false
                         });
                     }
-                    await reader.CloseAsync();
 
-                    // Загрузка всех товаров
-                    var productsQuery = "SELECT productname, productcost, product_image, product_type_id FROM products";
-                    var productCommand = new NpgsqlCommand(productsQuery, connection);
-                    var productReader = await productCommand.ExecuteReaderAsync();
-                    var productsList = new List<Product>();
-                    while (await productReader.ReadAsync())
-                    {
-                        productsList.Add(new Product
-                        {
-                            ProductName = productReader.GetString(0),
-                            ProductCost = productReader.GetDecimal(1),
-                            ProductImage = productReader.GetString(2),
-                            ProductTypeId = productReader.GetInt32(3)
-                        });
-                    }
-                    await productReader.CloseAsync();
+                    await reader.CloseAsync();
 
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                        Categories.Clear();
-                        foreach (var category in categoriesList)
-                        {
-                            Categories.Add(category);
-                        }
-
-                        AllProducts.Clear();
-                        foreach (var product in productsList)
-                        {
-                            AllProducts.Add(product);
-                        }
+                        ProductGroups.Clear();
+                        foreach (var category in categories)
+                            ProductGroups.Add(category);
                     });
                 }
-                catch (Exception ex)
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Ошибка", ex.Message, "OK");
+            }
+        }
+
+        private async Task LoadProductsForCategory(ProductGroup group)
+        {
+            if (group.Products.Any())
+                return;
+
+            try
+            {
+                using (var connection = new NpgsqlConnection(connectionString))
                 {
-                    await DisplayAlert("Ошибка", ex.Message, "OK");
+                    await connection.OpenAsync();
+
+                    var query = "SELECT productname, productcost, product_image, product_type_id FROM products WHERE product_type_id = @id";
+                    var cmd = new NpgsqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@id", group.ProductTypeId);
+                    var reader = await cmd.ExecuteReaderAsync();
+
+                    var products = new ObservableCollection<Product>();
+
+                    while (await reader.ReadAsync())
+                    {
+                        products.Add(new Product
+                        {
+                            ProductName = reader.GetString(0),
+                            ProductCost = reader.GetDecimal(1),
+                            ProductImage = reader.GetString(2),
+                            ProductTypeId = reader.GetInt32(3)
+                        });
+                    }
+
+                    await reader.CloseAsync();
+
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        foreach (var p in products)
+                            group.Products.Add(p);
+                    });
                 }
             }
-        }
-
-        private void FilterProducts()
-        {
-            if (SelectedCategory != null)
+            catch (Exception ex)
             {
-                var filtered = AllProducts.Where(p => p.ProductTypeId == SelectedCategory.ProductTypeId).ToList();
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    FilteredProducts.Clear();
-                    foreach (var product in filtered)
-                    {
-                        FilteredProducts.Add(product);
-                    }
-                });
+                await DisplayAlert("Ошибка", ex.Message, "OK");
             }
         }
 
-       
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private async void OnToggleExpand(ProductGroup group)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (group == null) return;
+
+            group.IsExpanded = !group.IsExpanded;
+
+            if (group.IsExpanded && !group.Products.Any())
+                await LoadProductsForCategory(group);
         }
 
-        private async void buyButton_Clicked(object sender, EventArgs e)
+        private async void BuyButton_Clicked(object sender, EventArgs e)
         {
-            //await Shell.Current.GoToAsync(nameof(BuyPage));
-            
-            await DisplayAlert("Успех", "Товар добавлен в корзину!", "OK"); // Показываем всплывающее сообщение
+            if (sender is Button button && button.BindingContext is Product product)
+            {
+                CartService.AddToCart(product);
+                await ShowToast($"Товар «{product.ProductName}» добавлен в корзину!");
+            }
+        }
 
+        private async Task ShowToast(string message)
+        {
+            ToastLabel.Text = message;
+            ToastFrame.Opacity = 0;
+            ToastFrame.IsVisible = true;
+
+            await ToastFrame.FadeTo(1, 250, Easing.SinIn);
+            await Task.Delay(2000);
+            await ToastFrame.FadeTo(0, 250, Easing.SinOut);
+
+            ToastFrame.IsVisible = false;
         }
 
         private async void cartButton_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync(nameof(BuyPage));
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
     }
 
-    public class CategoryViewModel
+    public class ProductGroup : INotifyPropertyChanged
     {
         public int ProductTypeId { get; set; }
-        public string ProductTypeName { get; set; }
+        public string Name { get; set; }
+
+        private bool _isExpanded;
+        public bool IsExpanded
+        {
+            get => _isExpanded;
+            set
+            {
+                if (_isExpanded != value)
+                {
+                    _isExpanded = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public ObservableCollection<Product> Products { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
     }
 
     public class Product
@@ -157,17 +190,5 @@ namespace DarkFit_app
         public decimal ProductCost { get; set; }
         public string ProductImage { get; set; }
         public int ProductTypeId { get; set; }
-
-        public ICommand BuyCommand { get; set; }
-
-        public Product()
-        {
-            BuyCommand = new Command(AddToCart);
-        }
-
-        private void AddToCart()
-        {
-            CartService.AddToCart(this);
-        }
     }
 }
