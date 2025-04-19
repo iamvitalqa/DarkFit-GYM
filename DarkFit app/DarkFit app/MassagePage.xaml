@@ -33,12 +33,13 @@
     <ScrollView>
         <StackLayout Padding="10" Spacing="10">
             <Button Text="Записаться"
+                    x:Name="orderButton"
                     BackgroundColor="#1d3ade"
                     TextColor="White"
                     CornerRadius="25"
                     FontSize="22"
                     HeightRequest="50"
-                    
+                    Clicked="orderButton_Clicked"
                     HorizontalOptions="FillAndExpand" />
 
             <CollectionView ItemsSource="{Binding MassageGroups}"
@@ -82,7 +83,7 @@
                                                     <Label Text="{Binding Description}" FontSize="14" TextColor="#666" />
                                                     <Label Text="{Binding Cost, StringFormat='{0}₽'}"
                                                            FontSize="16"
-                                                           TextColor="Green"
+                                                           TextColor="#8dbf42"
                                                            FontAttributes="Bold" />
                                                 </StackLayout>
                                             </Frame>

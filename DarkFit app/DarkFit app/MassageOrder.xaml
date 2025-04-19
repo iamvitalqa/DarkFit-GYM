@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarkFit_app.MassageOrder">
+
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="60,*,60"
+  VerticalOptions="Center">
+            <Image Source="darkfitCaption.png"
+       HorizontalOptions="Start"
+       VerticalOptions="Center" 
+       Grid.Column="0"/>
+            <Label Text="Онлайн запись"
+       HorizontalOptions="Center"
+       HorizontalTextAlignment="Center"
+       VerticalOptions="Center"
+       TextColor="Black"
+       FontAttributes="Bold"
+       FontSize="28"
+       Grid.Column="1"
+        />
+        </Grid>
+    </Shell.TitleView>
+
+
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Padding="20">
+            <!-- Заголовок -->
+
+            
+            <!-- Кнопка выбора услуги -->
+            <Button Text="Выберите услугу" x:Name="chooseorderButton" Clicked="chooseorderButton_Clicked" TextTransform="None" BackgroundColor="#8dbf42" FontSize="24" CornerRadius="25" TextColor="White" HorizontalOptions="FillAndExpand" />
+
+            <Frame CornerRadius="10" >
+                <Editor x:Name="dopInfo"
+                Placeholder="Доп. информация" FontSize="22"
+                HeightRequest="100" TextColor="Black" PlaceholderColor="Black" />
+            </Frame><!-- Поле для ввода информации -->
+            
+
+            <!-- Список противопоказаний -->
+            <Label Text="Противопоказания для массажа:" FontAttributes="Bold" FontSize="18" TextColor="Black" />
+            <StackLayout Orientation="Vertical">
+                <Label Text="• Болезненные и воспалительные процессы;" FontSize="18" TextColor="Black" />
+                <Label Text="• Системные заболевания;" FontSize="18" TextColor="Black" />
+                <Label Text="• Менструальный цикл и иные кровотечении;"  FontSize="18" TextColor="Black" />
+                <Label Text="• Онкология;" FontSize="18" TextColor="Black" />
+            </StackLayout>
+
+            <!-- Флажок для подтверждения отсутствия противопоказаний -->
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="applyCheckBox" />
+                <Label Text="Я подтверждаю отсутствие противопоказаний" FontSize="18" TextColor="Black" VerticalOptions="Center"/>
+            </StackLayout>
+            
+                
+            <!-- Контактная информация -->
+            <Label Text="Вопросы по записи Вы можете задать по телефону: (347) 200-85-81" FontSize="18" TextColor="Black" />
+
+            <!-- Кнопка для создания записи -->
+            <Button Text="Создать запись" x:Name="createorderButton" Clicked="createorderButton_Clicked" BackgroundColor="#1d3ade" TextTransform="None" FontSize="24" CornerRadius="25" TextColor="White" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DarkFit app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72aa5a1db29f2723803fc669dccbe9b696400d7c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+707a20481b99a8aa161c307404db1718c94c97c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("DarkFit app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DarkFit app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

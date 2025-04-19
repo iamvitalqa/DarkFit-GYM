@@ -17,6 +17,8 @@ namespace DarkFit_app
             Routing.RegisterRoute("BuyPage", typeof(BuyPage));
             Routing.RegisterRoute("AuthPage", typeof(AuthPage));
             Routing.RegisterRoute("PaymentPage", typeof(TrainersPage));
+            Routing.RegisterRoute("MassageOrder", typeof(MassageOrder));
+            
         }
     }
 }

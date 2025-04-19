@@ -94,5 +94,11 @@ namespace DarkFit_app
                 }
             }
         }
+
+        private async void callBackTrainerButton_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Запись", "Вы хотите чтобы тренер Вам перезвонил?", "Да", "Нет");
+            await DisplayAlert("Запись", "Ожидайте звонка!", "OK");
+        }
     }
 }

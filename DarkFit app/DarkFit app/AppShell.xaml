@@ -69,4 +69,6 @@
         <local:AuthPage />
     </ShellContent>
     <ShellContent Route="AuthPage" ContentTemplate="{DataTemplate local:PaymentPage}" />
+    <ShellContent Route="MassageOrder" ContentTemplate="{DataTemplate local:MassageOrder}" />
+    
 </Shell>

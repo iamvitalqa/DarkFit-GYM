@@ -64,7 +64,9 @@ D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\FeedbackPopup.xaml.g.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\GroupsPage.xaml.g.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\MassageOrder.xaml.g.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\MassagePage.xaml.g.cs
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\MassagePopup.xaml.g.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\MenuPopup.xaml.g.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\PaymentPage.xaml.g.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\PayPage.xaml.g.cs

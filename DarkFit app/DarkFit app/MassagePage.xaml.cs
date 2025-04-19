@@ -112,7 +112,7 @@ namespace DarkFit_app
                             Id = massageReader.GetInt32(0),
                             Name = massageReader.GetString(1),
                             Cost = massageReader.GetDecimal(2),
-                            Description = massageReader.GetString(3),
+                            Description = massageReader.IsDBNull(3) ? string.Empty : massageReader.GetString(3),
                             TypeId = massageReader.GetInt32(4)
                         };
 
@@ -131,6 +131,11 @@ namespace DarkFit_app
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        private async void orderButton_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(MassageOrder));
         }
     }
 

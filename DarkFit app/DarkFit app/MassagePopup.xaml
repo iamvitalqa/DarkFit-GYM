@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:local="clr-namespace:DarkFit_app"
+                 x:Class="DarkFit_app.MassagePopup"
+                 CloseWhenBackgroundIsClicked="True"
+                 >
+    <StackLayout x:Name="RootLayout">
+        <Frame BackgroundColor="White" CornerRadius="20" Padding="15" Margin="20"  
+               WidthRequest="280"
+               HeightRequest="450"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand" >
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="Выберите массаж" FontSize="24" FontAttributes="Bold" TextColor="Black" TextTransform="Uppercase" HorizontalOptions="Center" />
+
+                    <CollectionView ItemsSource="{Binding MassageGroups}" SelectionMode="None">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Label Text="{Binding Name}" FontSize="22" FontAttributes="Bold" TextColor="Black" TextTransform="Uppercase" />
+                                    <StackLayout IsVisible="{Binding IsExpanded}">
+                                        <StackLayout BindableLayout.ItemsSource="{Binding Massages}">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid Padding="5">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="Auto" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Text="{Binding Name}" FontSize="16" TextColor="Black" />
+                                                        <Button Text="+" FontSize="18" BackgroundColor="#8dbf42" WidthRequest="30" HorizontalOptions="End"
+                                                            Command="{Binding BindingContext.SelectMassageCommand, Source={x:Reference Name=RootLayout}}"
+                                                            CommandParameter="{Binding .}" />
+
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+
+    </StackLayout>
+</popup:PopupPage>

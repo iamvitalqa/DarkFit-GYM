@@ -36,7 +36,7 @@
             <Frame CornerRadius="15" HasShadow="True" BackgroundColor="White" Padding="15">
                 <StackLayout Spacing="10">
                     <Button Text="{Binding Phone}" x:Name="callTrainerButton" FontSize="24"  BackgroundColor="DarkSlateGray" Clicked="callTrainerButton_Clicked" TextColor="White" CornerRadius="25" />
-                    <Button Text="Прошу мне перезвонить" TextTransform="None" FontSize="24" BackgroundColor="#1d3ade" TextColor="White" CornerRadius="25" />
+                    <Button Text="Прошу мне перезвонить" x:Name="callBackTrainerButton" Clicked="callBackTrainerButton_Clicked" TextTransform="None" FontSize="24" BackgroundColor="#1d3ade" TextColor="White" CornerRadius="25" />
                     <Button Text="💅 Написать в WhatsApp" x:Name="whatsappTrainerButton" TextTransform="None" FontSize="24" BackgroundColor="#8dbf42" Clicked="whatsappTrainerButton_Clicked" TextColor="White" CornerRadius="25" />
                 </StackLayout>
             </Frame>
