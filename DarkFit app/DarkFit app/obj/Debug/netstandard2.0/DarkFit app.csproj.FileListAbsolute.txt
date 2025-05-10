@@ -82,3 +82,4 @@ D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.dll
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\refint\DarkFit app.dll
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.pdb
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\NotificationPage.xaml.g.cs

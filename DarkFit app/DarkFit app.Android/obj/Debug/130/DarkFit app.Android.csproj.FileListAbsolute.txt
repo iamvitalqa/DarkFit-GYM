@@ -2174,3 +2174,4 @@ D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\sta
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\stamp\_GenerateJavaStubs.stamp
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\stamp\_GeneratePackageManagerJava.stamp
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\stamp\_ResolveLibraryProjectImports.stamp
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res\drawable\notification.png

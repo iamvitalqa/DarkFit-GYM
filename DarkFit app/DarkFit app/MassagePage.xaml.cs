@@ -26,6 +26,17 @@ namespace DarkFit_app
             LoadMassageData();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Сворачиваем все аккордеоны при возвращении на страницу
+            foreach (var group in MassageGroups)
+            {
+                group.IsExpanded = false;
+            }
+        }
+
         private async void LoadMassageData()
         {
             using (var connection = new NpgsqlConnection(connectionString))
@@ -48,7 +59,7 @@ namespace DarkFit_app
                             Name = typeReader.GetString(1),
                             IsExpanded = false,
                             Massages = new ObservableCollection<Massage>(),
-                            IsDataLoaded = false // Изначально данные не загружены
+                            IsDataLoaded = false
                         });
                     }
                     await typeReader.CloseAsync();
@@ -73,19 +84,16 @@ namespace DarkFit_app
             {
                 if (group.IsExpanded)
                 {
-                    // Если категория уже раскрыта, просто меняем состояние
                     group.IsExpanded = false;
                 }
                 else
                 {
-                    // Если категория раскрыта впервые, загружаем услуги
                     group.IsExpanded = true;
 
-                    // Загружаем услуги для группы, если они еще не были загружены
                     if (!group.IsDataLoaded)
                     {
                         await LoadMassagesForGroup(group);
-                        group.IsDataLoaded = true; // Помечаем, что данные загружены
+                        group.IsDataLoaded = true;
                     }
                 }
             }
@@ -99,7 +107,6 @@ namespace DarkFit_app
                 {
                     await connection.OpenAsync();
 
-                    // Загружаем услуги массажа для выбранной категории
                     var massageQuery = "SELECT massageid, massagename, massagecost, massagedescription, massage_type_id FROM massages WHERE massage_type_id = @typeId";
                     var massageCommand = new NpgsqlCommand(massageQuery, connection);
                     massageCommand.Parameters.AddWithValue("@typeId", group.Id);
@@ -116,7 +123,7 @@ namespace DarkFit_app
                             TypeId = massageReader.GetInt32(4)
                         };
 
-                        group.Massages.Add(massage);  // Добавляем в коллекцию текущей группы
+                        group.Massages.Add(massage);
                     }
                     await massageReader.CloseAsync();
                 }
@@ -157,7 +164,6 @@ namespace DarkFit_app
 
         public ObservableCollection<Massage> Massages { get; set; }
 
-        // Флаг для проверки, были ли загружены данные
         public bool IsDataLoaded { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;

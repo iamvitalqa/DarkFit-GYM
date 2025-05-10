@@ -13,7 +13,8 @@ namespace DarkFit_app
 
             // Форматируем ссылку с учётом суммы
             string formattedAmount = totalCost.ToString("F2", System.Globalization.CultureInfo.InvariantCulture);
-            string paymentUrl = $"https://yoomoney.ru/to/4100116757351568?amount={formattedAmount}";
+            string paymentUrl = $"https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=Оплата услуги&targets-hint=&default-sum={formattedAmount}&sum-editable=false&button-text=11&payment-type-choice=on&mobile-payment-type-choice=on&successURL=https://example.com/success&account=4100116757351568";
+
 
             Console.WriteLine("Сформированная ссылка: " + paymentUrl);
 
@@ -28,8 +29,7 @@ namespace DarkFit_app
         {
             if (e.Url.Contains("success"))
             {
-                await DisplayAlert("Оплата успешна", "Ваш платеж прошел успешно!", "OK");
-                await Navigation.PopAsync();
+               ///
             }
             else if (e.Url.Contains("error"))
             {

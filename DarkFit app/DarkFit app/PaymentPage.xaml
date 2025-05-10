@@ -5,82 +5,91 @@
              Title="Личный кабинет">
 
     <Shell.TitleView>
-        <Grid ColumnDefinitions="60,*,60"
-              VerticalOptions="Center">
+        <Grid ColumnDefinitions="60,*,Auto,Auto"
+          VerticalOptions="Center"
+          Padding="0,0,10,0">
+            <!-- Логотип -->
             <Image Source="darkfitCaption.png"
-                   HorizontalOptions="Start"
-                   VerticalOptions="Center" 
-                   Grid.Column="0"/>
-            <Label Text="Личный кабинет"
-                   HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center"
-                   VerticalOptions="Center"
-                   TextColor="Black"
-                   FontAttributes="Bold"
-                   FontSize="28"
-                   Grid.Column="1"
-                    />
-            <ImageButton Source="Profile.png"  
-                WidthRequest="24"
-                         HeightRequest="24"
-                         BackgroundColor="Transparent"
-                         x:Name="menuButton"
-                         Clicked="menuButton_Clicked"
-                         Grid.Column="2"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center" />
+               HorizontalOptions="Start"
+               VerticalOptions="Center" 
+               Grid.Column="0" />
 
+            <!-- Заголовок -->
+            <Label Text="Личный кабинет"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               VerticalOptions="Center"
+               TextColor="Black"
+               FontAttributes="Bold"
+               FontSize="28"
+               Grid.Column="1" />
+
+            <!-- Кнопка уведомлений -->
+            <ImageButton Source="notification.png"  
+                     WidthRequest="24"
+                     HeightRequest="24"
+                     BackgroundColor="Transparent"
+                     x:Name="notificationButton"
+                     Clicked="notificationButton_Clicked"
+                     Grid.Column="2"
+                     Margin="0,0,10,0"
+                     HorizontalOptions="End"
+                     VerticalOptions="Center" />
+
+            <!-- Кнопка профиля -->
+            <ImageButton Source="Profile.png"  
+                     WidthRequest="24"
+                     HeightRequest="24"
+                     BackgroundColor="Transparent"
+                     x:Name="menuButton"
+                     Clicked="menuButton_Clicked"
+                     Grid.Column="3"
+                     HorizontalOptions="End"
+                     VerticalOptions="Center" />
         </Grid>
     </Shell.TitleView>
+
 
 
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="20" Padding="10">
-                <Frame CornerRadius="10" Padding="15" BackgroundColor="#f5f7f7" BorderColor="LightGray">
+                <Frame CornerRadius="10" Padding="15" BackgroundColor="White" BorderColor="LightGray">
                     <StackLayout>
                         <Label Text="QR-code для входа" FontSize="30" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />
                         <Image Source="qr.png" HeightRequest="300" />
-                        <Label Text="Покажите данный QR-code на ресепшен для входа в клуб." FontSize="15" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />
+                        <Label Text="Покажите данный QR-code на ресепшен для входа в клуб." FontSize="17" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />
                     </StackLayout>
                 </Frame>
-                <Frame CornerRadius="10" Padding="15" BackgroundColor="#f5f7f7" BorderColor="LightGray">
+                <Frame CornerRadius="10" Padding="15" BackgroundColor="White" BorderColor="LightGray">
                     <StackLayout>
-                        <Label Text="Оплата карты" FontSize="25" FontAttributes="Bold" TextColor="Black" />
+                        <Label Text="Оплата карты" FontSize="30" FontAttributes="Bold" TextColor="Black" />
                         <StackLayout Padding="5">
-                            <RadioButton x:Name="radioButton1" TextColor="Black" Content="Разовое: 350 ₽" />
-                            <RadioButton x:Name="radioButton2" TextColor="Black" Content="1 неделя: 990 ₽" />
-                            <RadioButton x:Name="radioButton3" TextColor="Black" Content="1 месяц: 3 490 ₽" />
-                            <RadioButton x:Name="radioButton4" TextColor="Black" Content="6 месяцев: 14 990 ₽" />
-                            <RadioButton x:Name="radioButton5" TextColor="Black" Content="12 месяцев: 24 990 ₽" />
+                            <RadioButton x:Name="radioButton1" TextColor="Black" Content="Разовое: 350 ₽" FontSize="20" />
+                            <RadioButton x:Name="radioButton2" TextColor="Black" Content="1 неделя: 990 ₽" FontSize="20" />
+                            <RadioButton x:Name="radioButton3" TextColor="Black" Content="1 месяц: 3 490 ₽" FontSize="20" />
+                            <RadioButton x:Name="radioButton4" TextColor="Black" Content="6 месяцев: 14 990 ₽" FontSize="20" />
+                            <RadioButton x:Name="radioButton5" TextColor="Black" Content="12 месяцев: 24 990 ₽" FontSize="20" />
                         </StackLayout>
-                        <Entry Placeholder="Введите промокод" TextColor="Black" PlaceholderColor="Black" x:Name="promoEntry" TextChanged="promoEntry_TextChanged" />
+                        <Entry Placeholder="Введите промокод" FontSize="20" TextColor="Black" PlaceholderColor="Black" x:Name="promoEntry" TextChanged="promoEntry_TextChanged" />
                         <Button Text="Подтвердить"  BackgroundColor="#1d3ade" TextColor="White" CornerRadius="25"  />
                     </StackLayout>
                 </Frame>
-                <Frame CornerRadius="10" Padding="15" BackgroundColor="#f5f7f7" BorderColor="LightGray">
+                <Frame CornerRadius="10" Padding="15" BackgroundColor="White" BorderColor="LightGray">
                     <StackLayout>
-                        <Label Text="Депозит" FontSize="25" FontAttributes="Bold" TextColor="Black" />
-                        <Label Text="Вы можете получить бонус при единоразовом пополнении Вашего счёта:" TextColor="Black" />
+                        <Label Text="Депозит" FontSize="30" FontAttributes="Bold" TextColor="Black" />
+                        <Label Text="Вы можете получить бонус при единоразовом пополнении Вашего счёта:" FontSize="20" TextColor="Black" />
                         <StackLayout Padding="5">
-                            <Label TextColor="Black" Text="• от 10 000 ₽ +10% к сумме" />
-                            <Label TextColor="Black" Text="• от 15 000 ₽ +15% к сумме" />
-                            <Label TextColor="Black" Text="• от 20 000 ₽ +20% к сумме" />
+                            <Label TextColor="Black" Text="• от 10 000 ₽ +10% к сумме" FontSize="20"  />
+                            <Label TextColor="Black" Text="• от 15 000 ₽ +15% к сумме" FontSize="20" />
+                            <Label TextColor="Black" Text="• от 20 000 ₽ +20% к сумме" FontSize="20" />
                         </StackLayout>
-                        <Entry Placeholder="Введите сумму" Keyboard="Numeric" TextColor="Black" TextChanged="Entry_TextChanged" PlaceholderColor="Black" />
-                        <Label Text="Счёт будет пополнен на: 0 ₽" FontSize="Small" TextColor="Black" x:Name="costLabel" />
+                        <Entry Placeholder="Введите сумму" FontSize="20" Keyboard="Numeric" TextColor="Black" TextChanged="Entry_TextChanged" PlaceholderColor="Black" />
+                        <Label Text="Счёт будет пополнен на: 0 ₽" FontSize="20" TextColor="Black" x:Name="costLabel"  />
                         <Button Text="Подтвердить" x:Name="depositButton" BackgroundColor="#1d3ade" TextColor="White" CornerRadius="25" Clicked="depositButton_Clicked" />
                     </StackLayout>
                 </Frame>
-                <Frame CornerRadius="10" Padding="15" BackgroundColor="#f5f7f7" BorderColor="LightGray">
-                    <StackLayout>
-                        <Label Text="Покупка сертификата" FontSize="25" FontAttributes="Bold" TextColor="Black" />
-                        <Label Text="Вы можете купить сертификат на любую сумму и подарить его любому члену клуба." FontSize="Small"  TextColor="Black" />
-                        <Label Text="После активации вашего сертификата он получит сумму на бонусный баланс, которую можно использовать для покупок." FontSize="Small" TextColor="Black" />
-                        <Entry Placeholder="Введите сумму для сертификата" Keyboard="Numeric" TextColor="Black" PlaceholderColor="Black" />
-                        <Button Text="Подтвердить" BackgroundColor="#1d3ade" TextColor="White" CornerRadius="25" />
-                    </StackLayout>
-                </Frame>
+                
                 
             </StackLayout>
         </ScrollView>

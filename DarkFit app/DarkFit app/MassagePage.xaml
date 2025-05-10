@@ -47,52 +47,60 @@
                             SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Padding="5" BackgroundColor="White" >
-                            <!-- Заголовок категории с тапом -->
-                            <StackLayout>
-                                <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="ToggleExpandTapped" />
-                                </StackLayout.GestureRecognizers>
+                        <Frame CornerRadius="10"
+           BorderColor="#cccccc"
+           BackgroundColor="White"
+           Padding="0"
+           Margin="0,5,0,10"
+           HasShadow="False">
+                            <StackLayout Padding="5">
+                                <!-- Заголовок категории с тапом -->
+                                <StackLayout>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="ToggleExpandTapped" />
+                                    </StackLayout.GestureRecognizers>
 
-                                <Grid Padding="10">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
+                                    <Grid Padding="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
 
-                                    <Label Text="{Binding Name}" FontSize="20" TextColor="Black" />
-                                    <Label Text="{Binding IsExpanded, Converter={StaticResource BoolToSymbolConverter}}"
-                                           FontSize="20"
-                                           TextColor="Black"
-                                           Grid.Column="1" />
-                                </Grid>
-                            </StackLayout>
+                                        <Label Text="{Binding Name}" FontSize="25" TextColor="Black" />
+                                        <Label Text="{Binding IsExpanded, Converter={StaticResource BoolToSymbolConverter}}"
+                           FontSize="20"
+                           TextColor="Black"
+                           Grid.Column="1" />
+                                    </Grid>
+                                </StackLayout>
 
-                            <!-- Список массажа внутри категории -->
-                            <StackLayout IsVisible="{Binding IsExpanded}" Padding="10,0,0,10">
-                                <StackLayout BindableLayout.ItemsSource="{Binding Massages}">
-                                    <BindableLayout.ItemTemplate>
-                                        <DataTemplate>
-                                            <Frame BorderColor="#e0e0e0"
-                                                   BackgroundColor="#fafafa"
-                                                   CornerRadius="8"
-                                                   Padding="10"
-                                                   Margin="0,5,0,5">
-                                                <StackLayout>
-                                                    <Label Text="{Binding Name}" FontSize="18" TextColor="Black" />
-                                                    <Label Text="{Binding Description}" FontSize="14" TextColor="#666" />
-                                                    <Label Text="{Binding Cost, StringFormat='{0}₽'}"
-                                                           FontSize="16"
-                                                           TextColor="#8dbf42"
-                                                           FontAttributes="Bold" />
-                                                </StackLayout>
-                                            </Frame>
-                                        </DataTemplate>
-                                    </BindableLayout.ItemTemplate>
+                                <!-- Список массажа внутри категории -->
+                                <StackLayout IsVisible="{Binding IsExpanded}" Padding="10,0,0,10">
+                                    <StackLayout BindableLayout.ItemsSource="{Binding Massages}">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate>
+                                                <Frame BorderColor="#e0e0e0"
+                                   BackgroundColor="#fafafa"
+                                   CornerRadius="8"
+                                   Padding="10"
+                                   Margin="0,5,0,5">
+                                                    <StackLayout>
+                                                        <Label Text="{Binding Name}" FontSize="25" TextColor="Black" />
+                                                        <Label Text="{Binding Description}" FontSize="20" TextColor="#666" />
+                                                        <Label Text="{Binding Cost, StringFormat='{0}₽'}"
+                                           FontSize="25"
+                                           TextColor="#8dbf42"
+                                           FontAttributes="Bold" />
+                                                    </StackLayout>
+                                                </Frame>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
+                        </Frame>
                     </DataTemplate>
+
                 </CollectionView.ItemTemplate>
             </CollectionView>
 

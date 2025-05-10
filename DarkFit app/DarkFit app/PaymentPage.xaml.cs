@@ -85,5 +85,10 @@ namespace DarkFit_app
             var popup = new MenuPopup();
             await Rg.Plugins.Popup.Services.PopupNavigation.Instance.PushAsync(popup);
         }
+
+        private async void notificationButton_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(NotificationPage));
+        }
     }
 }

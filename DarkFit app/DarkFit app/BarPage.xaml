@@ -43,67 +43,76 @@
                 <CollectionView ItemsSource="{Binding ProductGroups}" Margin="0,10,0,0" SelectionMode="None">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="5" BackgroundColor="White">
-                                <!-- Заголовок категории -->
-                                <Grid Padding="10">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
+                            <Frame CornerRadius="10"
+           BorderColor="#cccccc"
+           BackgroundColor="White"
+           Padding="0"
+           Margin="0,5,0,10"
+           HasShadow="False">
+                                <StackLayout Padding="5">
+                                    <!-- Заголовок категории -->
+                                    <Grid Padding="10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
 
-                                    <Label Text="{Binding Name}" FontSize="20" TextColor="Black" />
-                                    <Label Text="{Binding IsExpanded, Converter={StaticResource BoolToSymbolConverter}}"
-                                           FontSize="20"
-                                           TextColor="Black"
-                                           Grid.Column="1" />
+                                        <Label Text="{Binding Name}" FontSize="25" TextColor="Black" />
+                                        <Label Text="{Binding IsExpanded, Converter={StaticResource BoolToSymbolConverter}}"
+                       FontSize="20"
+                       TextColor="Black"
+                       Grid.Column="1" />
 
-                                    <Grid.GestureRecognizers>
-                                        <TapGestureRecognizer
-                                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:BarPage}}, Path=BindingContext.ToggleExpandCommand}"
-                                            CommandParameter="{Binding .}" />
-                                    </Grid.GestureRecognizers>
-                                </Grid>
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:BarPage}}, Path=BindingContext.ToggleExpandCommand}"
+                        CommandParameter="{Binding .}" />
+                                        </Grid.GestureRecognizers>
+                                    </Grid>
 
-                                <!-- Продукты -->
-                                <StackLayout IsVisible="{Binding IsExpanded}" Padding="10,0,0,10">
-                                    <StackLayout BindableLayout.ItemsSource="{Binding Products}">
-                                        <BindableLayout.ItemTemplate>
-                                            <DataTemplate>
-                                                <Frame BorderColor="#e0e0e0"
-                                                       BackgroundColor="#fafafa"
-                                                       CornerRadius="8"
-                                                       Padding="10"
-                                                       Margin="0,5,0,5">
-                                                    <Grid ColumnDefinitions="80,*,100" ColumnSpacing="10">
-                                                        <Image Source="{Binding ProductImage}"
-                                                               HeightRequest="50"
-                                                               WidthRequest="50"
-                                                               Aspect="AspectFill"
-                                                               Grid.Column="0" />
-                                                        <Label Text="{Binding ProductName}"
-                                                               FontSize="18"
-                                                               VerticalOptions="Center"
-                                                               Grid.Column="1"
-                                                               TextColor="Black" />
-                                                        <StackLayout Grid.Column="2" VerticalOptions="Center">
-                                                            <Button Text="Купить"
-                                                                    FontSize="14"
-                                                                    CornerRadius="15"
-                                                                    Clicked="BuyButton_Clicked"
-                                                                    BackgroundColor="#8dbf42"
-                                                                    TextColor="White" />
-                                                            <Label Text="{Binding ProductCost, StringFormat='{0:C}'}"
-                                                                   FontSize="16"
-                                                                   HorizontalTextAlignment="Center" />
-                                                        </StackLayout>
-                                                    </Grid>
-                                                </Frame>
-                                            </DataTemplate>
-                                        </BindableLayout.ItemTemplate>
+                                    <!-- Продукты -->
+                                    <StackLayout IsVisible="{Binding IsExpanded}" Padding="10,0,0,10">
+                                        <StackLayout BindableLayout.ItemsSource="{Binding Products}">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Frame BorderColor="#e0e0e0"
+                                   BackgroundColor="#fafafa"
+                                   CornerRadius="8"
+                                   Padding="10"
+                                   Margin="0,5,0,5">
+                                                        <Grid ColumnDefinitions="80,*,100" ColumnSpacing="10">
+                                                            <Image Source="{Binding ProductImage}"
+                                           HeightRequest="100"
+                                           WidthRequest="100"
+                                           Aspect="AspectFit"
+                                           Grid.Column="0" />
+                                                            <Label Text="{Binding ProductName}"
+                                           FontSize="25"
+                                           VerticalOptions="Center"
+                                           Grid.Column="1"
+                                           TextColor="Black" />
+                                                            <StackLayout Grid.Column="2" VerticalOptions="Center">
+                                                                <Button Text="Купить"
+                                                FontSize="20"
+                                                CornerRadius="15"
+                                                Clicked="BuyButton_Clicked"
+                                                BackgroundColor="#8dbf42"
+                                                TextColor="White" />
+                                                                <Label Text="{Binding ProductCost, StringFormat='{0:C}'}"
+                                               FontSize="25"
+                                               TextColor="#8dbf42"
+                                               HorizontalTextAlignment="Center" />
+                                                            </StackLayout>
+                                                        </Grid>
+                                                    </Frame>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
+                            </Frame>
                         </DataTemplate>
+
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>

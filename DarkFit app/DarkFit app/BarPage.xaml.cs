@@ -27,6 +27,17 @@ namespace DarkFit_app
             LoadCategories();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Сворачиваем все аккордеоны (группы продуктов)
+            foreach (var group in ProductGroups)
+            {
+                group.IsExpanded = false;
+            }
+        }
+
         private async void LoadCategories()
         {
             try

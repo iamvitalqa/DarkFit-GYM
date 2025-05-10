@@ -23,18 +23,18 @@
                                 <Image Source="{Binding ProductImage}" 
                                        HeightRequest="60" 
                                        WidthRequest="60" 
-                                       Aspect="AspectFill"
+                                       Aspect="AspectFit"
                                        Grid.Column="0" />
 
                                 <Label Text="{Binding ProductName}"
-                                       FontSize="22"
+                                       FontSize="25"
                                        TextColor="Black"
                                        VerticalTextAlignment="Center"
                                        Grid.Column="1" />
 
                                 <Label Text="{Binding ProductCost, StringFormat='{0:C}'}"
-                                       FontSize="20"
-                                       TextColor="Black"
+                                       FontSize="25"
+                                       TextColor="#8dbf42"
                                        VerticalTextAlignment="Center"
                                        HorizontalTextAlignment="End"
                                        Grid.Column="2" />
@@ -56,7 +56,7 @@
             <Frame BackgroundColor="White" Padding="10" CornerRadius="10" Margin="10">
                 <StackLayout Spacing="10">
                     <Label Text="Всего к оплате:"
-                           FontSize="22"
+                           FontSize="25"
                            TextColor="Black"
                            HorizontalOptions="Start" />
 
@@ -64,7 +64,7 @@
                            Text="{Binding TotalCost, StringFormat='{0:C}'}"
                            FontSize="26"
                            FontAttributes="Bold"
-                           TextColor="Green"
+                           TextColor="#8dbf42"
                            HorizontalOptions="Start" />
 
                     <Button Text="Перейти к оплате"
