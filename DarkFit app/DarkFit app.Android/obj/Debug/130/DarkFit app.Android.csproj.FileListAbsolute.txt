@@ -1504,6 +1504,7 @@ D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res\drawable\darkzorge.png
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res\drawable\darkfitcaption.png
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res\drawable\profile.png
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res\drawable\notification.png
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\uploadflags.txt
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\resolvedassemblies.hash
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\android\assets\DarkFit app.Android.dll
@@ -2174,4 +2175,3 @@ D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\sta
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\stamp\_GenerateJavaStubs.stamp
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\stamp\_GeneratePackageManagerJava.stamp
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\stamp\_ResolveLibraryProjectImports.stamp
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res\drawable\notification.png

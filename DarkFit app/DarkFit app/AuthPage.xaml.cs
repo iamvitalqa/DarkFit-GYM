@@ -83,6 +83,9 @@ namespace DarkFit_app
                 // сохраняем в Preferences
                 Preferences.Set("UserId", userId.Value);
 
+                App.CurrentUserId = userId.Value;
+
+
                 if (rememberMe)
                 {
                     Preferences.Set("IsLoggedIn", true);

@@ -8,9 +8,11 @@ namespace DarkFit_app
 {
     public partial class App : Application
     {
+        public static int CurrentUserId { get; set; }
         public App()
         {
             InitializeComponent();
+
 
             // Устанавливаем AppShell как главную страницу
             MainPage = new AppShell();

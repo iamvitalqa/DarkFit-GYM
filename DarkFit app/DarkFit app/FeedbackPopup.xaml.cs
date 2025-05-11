@@ -3,7 +3,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
-using Xamarin.Essentials;
 using System.Threading.Tasks;
 using Npgsql;
 
@@ -13,16 +12,15 @@ namespace DarkFit_app.Views
     public partial class FeedbackPopup : PopupPage
     {
         private readonly int _userId;
-        private int? _clientId;
 
         public FeedbackPopup(int userId)
         {
             InitializeComponent();
             _userId = userId;
-            LoadClientDataAsync(); // загружаем clientId и имя
+            LoadUserFullNameAsync();
         }
 
-        private async void LoadClientDataAsync()
+        private async void LoadUserFullNameAsync()
         {
             try
             {
@@ -30,20 +28,39 @@ namespace DarkFit_app.Views
                 {
                     await conn.OpenAsync();
 
-                    string query = "SELECT client_id, clientsurname, clientname, clientpatronymic FROM clients WHERE user_id = @userId";
+                    // Попытка получить ФИО из clients
+                    string clientQuery = @"
+                        SELECT clientsurname, clientname, clientpatronymic 
+                        FROM clients 
+                        WHERE user_id = @userId";
 
-                    using (var cmd = new NpgsqlCommand(query, conn))
+                    using (var cmd = new NpgsqlCommand(clientQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("userId", _userId);
-
                         using (var reader = await cmd.ExecuteReaderAsync())
                         {
                             if (await reader.ReadAsync())
                             {
-                                _clientId = Convert.ToInt32(reader["client_id"]);
+                                NameEntry.Text = $"{reader["clientsurname"]} {reader["clientname"]} {reader["clientpatronymic"]}";
+                                return;
+                            }
+                        }
+                    }
 
-                                string fullName = $"{reader["clientsurname"]} {reader["clientname"]} {reader["clientpatronymic"]}";
-                                NameEntry.Text = fullName;
+                    // Если не найден client — пробуем worker
+                    string workerQuery = @"
+                        SELECT worker_surname, worker_name, worker_patronymic 
+                        FROM workers 
+                        WHERE user_id = @userId";
+
+                    using (var cmd = new NpgsqlCommand(workerQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("userId", _userId);
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        {
+                            if (await reader.ReadAsync())
+                            {
+                                NameEntry.Text = $"{reader["worker_surname"]} {reader["worker_name"]} {reader["worker_patronymic"]}";
                             }
                         }
                     }
@@ -51,44 +68,60 @@ namespace DarkFit_app.Views
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Ошибка", $"Не удалось загрузить данные клиента: {ex.Message}", "ОК");
+                await DisplayAlert("Ошибка", $"Не удалось загрузить имя пользователя: {ex.Message}", "ОК");
             }
         }
 
-        private async Task SendFeedbackAsync(string message)
+        private async Task SendNotificationToAdminsAsync(string message)
         {
-            if (_clientId == null)
-            {
-                await DisplayAlert("Ошибка", "Не удалось определить клиента для отправки сообщения.", "ОК");
-                return;
-            }
-
             try
             {
                 using (var conn = new NpgsqlConnection(DarkFitDatabase.ConnectionString))
                 {
                     await conn.OpenAsync();
 
-                    string insertQuery = @"
-                        INSERT INTO feedback (comment, worker_id, client_id, created_at) 
-                        VALUES (@comment, 1, @client_id, @created_at);
-                    ";
+                    // Получаем всех пользователей с ролью admin (role_id = 1)
+                    string getAdminsQuery = @"
+                        SELECT user_id 
+                        FROM users 
+                        WHERE role_id = 1";
 
-                    using (var cmd = new NpgsqlCommand(insertQuery, conn))
+                    using (var getAdminsCmd = new NpgsqlCommand(getAdminsQuery, conn))
+                    using (var reader = await getAdminsCmd.ExecuteReaderAsync())
                     {
-                        cmd.Parameters.AddWithValue("comment", message);
-                        cmd.Parameters.AddWithValue("client_id", _clientId.Value);
-                        cmd.Parameters.AddWithValue("created_at", DateTime.UtcNow);
-                        await cmd.ExecuteNonQueryAsync();
-                    }
+                        var adminUserIds = new System.Collections.Generic.List<int>();
+                        while (await reader.ReadAsync())
+                        {
+                            adminUserIds.Add(reader.GetInt32(0));
+                        }
 
-                    await DisplayAlert("Успешно", "Ваше обращение отправлено!", "ОК");
-                    await PopupNavigation.Instance.PopAsync();
+                        reader.Close(); // Закрыть, прежде чем выполнять другие команды
+
+                        foreach (var adminId in adminUserIds)
+                        {
+                            string insertQuery = @"
+                                INSERT INTO notifications (sender_user_id, user_id, message, created_at, is_read)
+                                VALUES (@sender_user_id, @receiver_user_id, @message, @created_at, false)";
+
+                            using (var insertCmd = new NpgsqlCommand(insertQuery, conn))
+                            {
+                                insertCmd.Parameters.AddWithValue("sender_user_id", _userId);
+                                insertCmd.Parameters.AddWithValue("receiver_user_id", adminId);
+                                insertCmd.Parameters.AddWithValue("message", message);
+                                insertCmd.Parameters.AddWithValue("created_at", DateTime.UtcNow);
+
+                                await insertCmd.ExecuteNonQueryAsync();
+                            }
+                        }
+                    }
                 }
+
+                await DisplayAlert("Успешно", "Ваше обращение отправлено администрации!", "ОК");
+                await PopupNavigation.Instance.PopAsync();
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Ошибка", $"Произошла ошибка при отправке: {ex.Message}", "ОК");
+                await DisplayAlert("Ошибка", $"Ошибка при отправке: {ex.Message}", "ОК");
             }
         }
 
@@ -104,6 +137,10 @@ namespace DarkFit_app.Views
             {
                 NameEntry.Text = string.Empty;
             }
+            else
+            {
+                LoadUserFullNameAsync();
+            }
         }
 
         private async void OnSubmitClicked(object sender, EventArgs e)
@@ -112,11 +149,11 @@ namespace DarkFit_app.Views
 
             if (string.IsNullOrWhiteSpace(message))
             {
-                await DisplayAlert("Ошибка", "Пожалуйста, введите сообщение.", "ОК");
+                await DisplayAlert("Ошибка", "Введите сообщение.", "ОК");
                 return;
             }
 
-            await SendFeedbackAsync(message);
+            await SendNotificationToAdminsAsync(message);
         }
     }
 }

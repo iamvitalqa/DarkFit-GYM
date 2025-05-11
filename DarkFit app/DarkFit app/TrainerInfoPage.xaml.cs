@@ -97,8 +97,72 @@ namespace DarkFit_app
 
         private async void callBackTrainerButton_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Запись", "Вы хотите чтобы тренер Вам перезвонил?", "Да", "Нет");
-            await DisplayAlert("Запись", "Ожидайте звонка!", "OK");
+            bool confirmed = await DisplayAlert("Запись", "Вы хотите чтобы тренер Вам перезвонил?", "Да", "Нет");
+            if (!confirmed) return;
+
+            try
+            {
+                int currentUserId = Preferences.Get("UserId", -1);
+                if (currentUserId == -1)
+                {
+                    await DisplayAlert("Ошибка", "Вы не авторизованы", "OK");
+                    return;
+                }
+
+                string connectionString = DarkFitDatabase.ConnectionString;
+
+                string clientName = "";
+                string message = "";
+
+                using (var connection = new NpgsqlConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    // Получаем ФИО клиента
+                    var getClientCommand = new NpgsqlCommand(
+                        "SELECT clientsurname, clientname, clientpatronymic FROM clients WHERE user_id = @userId", connection);
+                    getClientCommand.Parameters.AddWithValue("@userId", currentUserId);
+                    using (var reader = await getClientCommand.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            clientName = $"{reader["clientsurname"]} {reader["clientname"]} {reader["clientpatronymic"]}";
+                        }
+                    }
+
+                    // Формируем сообщение
+                    message = $"{clientName}, хочет на вашу тренировку!";
+                }
+
+                // Вставляем уведомление для тренера (user_id из workers)
+                using (var connection = new NpgsqlConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    var getTrainerUserIdCmd = new NpgsqlCommand("SELECT user_id FROM workers WHERE worker_id = @workerId", connection);
+                    getTrainerUserIdCmd.Parameters.AddWithValue("@workerId", TrainerId);
+
+                    var trainerUserIdObj = await getTrainerUserIdCmd.ExecuteScalarAsync();
+
+                    if (trainerUserIdObj != null && int.TryParse(trainerUserIdObj.ToString(), out int trainerUserId))
+                    {
+                        var insertCommand = new NpgsqlCommand(
+                            "INSERT INTO notifications (user_id, message, created_at, is_read) VALUES (@userId, @message, NOW(), false)", connection);
+                        insertCommand.Parameters.AddWithValue("@userId", trainerUserId);
+                        insertCommand.Parameters.AddWithValue("@message", message);
+                        await insertCommand.ExecuteNonQueryAsync();
+                        await DisplayAlert("Уведомление", "Ожидайте звонка!", "OK");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Ошибка", "Не удалось определить тренера", "OK");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Ошибка", $"Произошла ошибка: {ex.Message}", "OK");
+            }
         }
     }
 }
