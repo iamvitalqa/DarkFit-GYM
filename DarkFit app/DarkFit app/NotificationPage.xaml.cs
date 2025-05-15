@@ -59,11 +59,17 @@ namespace DarkFit_app
 
                 string query = @"
                     SELECT 
+                        n.notification_id,
                         n.message, 
                         n.created_at,
-                        u.user_login AS sender_name
+                        n.sender_user_id,
+                        u.role_id,
+                        c.clientsurname, c.clientname, c.clientpatronymic,
+                        w.worker_surname, w.worker_name, w.worker_patronymic
                     FROM notifications n
                     LEFT JOIN users u ON n.sender_user_id = u.user_id
+                    LEFT JOIN clients c ON u.role_id = 3 AND c.user_id = u.user_id
+                    LEFT JOIN workers w ON u.role_id = 2 AND w.user_id = u.user_id
                     WHERE n.user_id = @userId
                     ORDER BY n.created_at DESC";
 
@@ -75,11 +81,29 @@ namespace DarkFit_app
                     {
                         while (await reader.ReadAsync())
                         {
+                            string senderName = string.Empty;
+
+                            if (!(reader["sender_user_id"] is DBNull))
+                            {
+                                int senderRole = reader["role_id"] is DBNull ? 0 : Convert.ToInt32(reader["role_id"]);
+
+                                if (senderRole == 3) // клиент
+                                {
+                                    senderName = $"{reader["clientsurname"]} {reader["clientname"]}";
+                                }
+                                else if (senderRole == 2) // тренер
+                                {
+                                    senderName = $"{reader["worker_surname"]} {reader["worker_name"]}";
+                                }
+                            }
+
                             Notifications.Add(new NotificationModel
                             {
+                                NotificationId = reader["notification_id"] is DBNull ? 0 : Convert.ToInt32(reader["notification_id"]),
                                 Message = reader["message"].ToString(),
                                 CreatedAt = Convert.ToDateTime(reader["created_at"]),
-                                SenderName = reader["sender_name"].ToString()
+                                SenderUserId = reader["sender_user_id"] is DBNull ? 0 : Convert.ToInt32(reader["sender_user_id"]),
+                                SenderName = senderName
                             });
                         }
                     }
@@ -87,11 +111,51 @@ namespace DarkFit_app
             }
         }
 
+        private async void OnNotificationTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (_roleId != 2) return; // Только тренеры могут отвечать
+
+            if (e.Item is NotificationModel notification)
+            {
+                bool confirm = await DisplayAlert("Ответ", $"Отправить клиенту ответ: \"Я скоро с Вами свяжусь! 😉\"?", "Да", "Нет");
+                if (!confirm) return;
+
+                try
+                {
+                    using (var conn = new NpgsqlConnection(DarkFitDatabase.ConnectionString))
+                    {
+                        await conn.OpenAsync();
+
+                        var insertCommand = new NpgsqlCommand(
+                            @"INSERT INTO notifications (user_id, sender_user_id, message, created_at, is_read)
+                      VALUES (@userId, @senderUserId, @message, NOW(), false)", conn);
+
+                        insertCommand.Parameters.AddWithValue("@userId", notification.SenderUserId);
+                        insertCommand.Parameters.AddWithValue("@senderUserId", _userId); // текущий тренер
+                        insertCommand.Parameters.AddWithValue("@message", "Я скоро с Вами свяжусь! 😉");
+
+                        await insertCommand.ExecuteNonQueryAsync();
+                    }
+
+                    await DisplayAlert("Отправлено", "Ответ отправлен клиенту!", "ОК");
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Ошибка", $"Ошибка при отправке ответа: {ex.Message}", "ОК");
+                }
+            }
+        }
+
+
+
+
         public class NotificationModel
         {
+            public int NotificationId { get; set; }
             public string Message { get; set; }
             public DateTime CreatedAt { get; set; }
             public string SenderName { get; set; }
+            public int SenderUserId { get; set; }
         }
     }
 }

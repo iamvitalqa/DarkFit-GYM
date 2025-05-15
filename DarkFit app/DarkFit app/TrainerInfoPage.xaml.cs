@@ -97,7 +97,7 @@ namespace DarkFit_app
 
         private async void callBackTrainerButton_Clicked(object sender, EventArgs e)
         {
-            bool confirmed = await DisplayAlert("Запись", "Вы хотите чтобы тренер Вам перезвонил?", "Да", "Нет");
+            bool confirmed = await DisplayAlert("Запись", "Вы хотите записаться к этому тренеру?", "Да", "Нет");
             if (!confirmed) return;
 
             try
@@ -129,12 +129,11 @@ namespace DarkFit_app
                             clientName = $"{reader["clientsurname"]} {reader["clientname"]} {reader["clientpatronymic"]}";
                         }
                     }
-
-                    // Формируем сообщение
-                    message = $"{clientName}, хочет на вашу тренировку!";
                 }
 
-                // Вставляем уведомление для тренера (user_id из workers)
+                message = $"Хочу попасть к Вам на тренировку! 😀";
+
+                // Отправляем уведомление тренеру
                 using (var connection = new NpgsqlConnection(connectionString))
                 {
                     await connection.OpenAsync();
@@ -147,11 +146,13 @@ namespace DarkFit_app
                     if (trainerUserIdObj != null && int.TryParse(trainerUserIdObj.ToString(), out int trainerUserId))
                     {
                         var insertCommand = new NpgsqlCommand(
-                            "INSERT INTO notifications (user_id, message, created_at, is_read) VALUES (@userId, @message, NOW(), false)", connection);
+                            "INSERT INTO notifications (user_id, sender_user_id, message, created_at, is_read) " +
+                            "VALUES (@userId, @senderUserId, @message, NOW(), false)", connection);
                         insertCommand.Parameters.AddWithValue("@userId", trainerUserId);
+                        insertCommand.Parameters.AddWithValue("@senderUserId", currentUserId);
                         insertCommand.Parameters.AddWithValue("@message", message);
                         await insertCommand.ExecuteNonQueryAsync();
-                        await DisplayAlert("Уведомление", "Ожидайте звонка!", "OK");
+                        await DisplayAlert("Успешно", "Запрос отправлен! Ожидайте ответа.", "OK");
                     }
                     else
                     {
