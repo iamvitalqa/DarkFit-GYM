@@ -55,7 +55,23 @@
         <ScrollView>
             <StackLayout Spacing="20" Padding="10">
                 <Frame CornerRadius="10" Padding="15" BackgroundColor="White" BorderColor="LightGray">
+                    
+                    
+                    
                     <StackLayout>
+
+                        <Label x:Name="FullNameLabel" 
+                           FontSize="26" 
+                           FontAttributes="Bold" 
+                           HorizontalOptions="Start" 
+                           TextColor="#1d3ade" /> 
+
+                        <Label x:Name="RoleLabel" 
+                           FontSize="24" 
+                           HorizontalOptions="Start" 
+                           TextColor="Red" />
+
+
                         <Label Text="QR-code для входа" FontSize="30" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />
                         <Image Source="qr.png" HeightRequest="300" />
                         <Label Text="Покажите данный QR-code на ресепшен для входа в клуб." FontSize="17" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />

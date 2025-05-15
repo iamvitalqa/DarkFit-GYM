@@ -71,6 +71,7 @@ D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\PaymentPage.xaml.g.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\PayPage.xaml.g.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\RegisterPage.xaml.g.cs
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\SettingsPage.xaml.g.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\TrainerInfoPage.xaml.g.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\TrainersPage.xaml.g.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\WelcomePage.xaml.g.cs
@@ -82,4 +83,3 @@ D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.dll
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\refint\DarkFit app.dll
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.pdb
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\SettingsPage.xaml.g.cs
