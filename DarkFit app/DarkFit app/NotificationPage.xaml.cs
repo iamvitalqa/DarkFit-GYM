@@ -63,9 +63,10 @@ namespace DarkFit_app
                         n.message, 
                         n.created_at,
                         n.sender_user_id,
+                        n.is_read,
                         u.role_id,
-                        c.clientsurname, c.clientname, c.clientpatronymic,
-                        w.worker_surname, w.worker_name, w.worker_patronymic
+                        c.clientsurname, c.clientname,
+                        w.worker_surname, w.worker_name
                     FROM notifications n
                     LEFT JOIN users u ON n.sender_user_id = u.user_id
                     LEFT JOIN clients c ON u.role_id = 3 AND c.user_id = u.user_id
@@ -87,11 +88,11 @@ namespace DarkFit_app
                             {
                                 int senderRole = reader["role_id"] is DBNull ? 0 : Convert.ToInt32(reader["role_id"]);
 
-                                if (senderRole == 3) // клиент
+                                if (senderRole == 3)
                                 {
                                     senderName = $"{reader["clientsurname"]} {reader["clientname"]}";
                                 }
-                                else if (senderRole == 2) // тренер
+                                else if (senderRole == 2)
                                 {
                                     senderName = $"{reader["worker_surname"]} {reader["worker_name"]}";
                                 }
@@ -103,7 +104,8 @@ namespace DarkFit_app
                                 Message = reader["message"].ToString(),
                                 CreatedAt = Convert.ToDateTime(reader["created_at"]),
                                 SenderUserId = reader["sender_user_id"] is DBNull ? 0 : Convert.ToInt32(reader["sender_user_id"]),
-                                SenderName = senderName
+                                SenderName = senderName,
+                                IsRead = reader["is_read"] is DBNull ? false : Convert.ToBoolean(reader["is_read"])
                             });
                         }
                     }
@@ -117,6 +119,9 @@ namespace DarkFit_app
 
             if (e.Item is NotificationModel notification)
             {
+                if (notification.IsRead)
+                    return;
+
                 bool confirm = await DisplayAlert("Ответ", $"Отправить клиенту ответ: \"Я скоро с Вами свяжусь! 😉\"?", "Да", "Нет");
                 if (!confirm) return;
 
@@ -126,16 +131,28 @@ namespace DarkFit_app
                     {
                         await conn.OpenAsync();
 
+                        // Отправляем новое уведомление
                         var insertCommand = new NpgsqlCommand(
                             @"INSERT INTO notifications (user_id, sender_user_id, message, created_at, is_read)
-                      VALUES (@userId, @senderUserId, @message, NOW(), false)", conn);
+                              VALUES (@userId, @senderUserId, @message, NOW(), false)", conn);
 
                         insertCommand.Parameters.AddWithValue("@userId", notification.SenderUserId);
-                        insertCommand.Parameters.AddWithValue("@senderUserId", _userId); // текущий тренер
+                        insertCommand.Parameters.AddWithValue("@senderUserId", _userId);
                         insertCommand.Parameters.AddWithValue("@message", "Я скоро с Вами свяжусь! 😉");
 
                         await insertCommand.ExecuteNonQueryAsync();
+
+                        // Обновляем флаг is_read для текущего уведомления
+                        var updateCommand = new NpgsqlCommand(
+                            "UPDATE notifications SET is_read = TRUE WHERE notification_id = @notificationId", conn);
+                        updateCommand.Parameters.AddWithValue("@notificationId", notification.NotificationId);
+                        await updateCommand.ExecuteNonQueryAsync();
                     }
+
+                    // Обновляем локально
+                    notification.IsRead = true;
+                    NotificationListView.ItemsSource = null;
+                    NotificationListView.ItemsSource = Notifications;
 
                     await DisplayAlert("Отправлено", "Ответ отправлен клиенту!", "ОК");
                 }
@@ -146,9 +163,6 @@ namespace DarkFit_app
             }
         }
 
-
-
-
         public class NotificationModel
         {
             public int NotificationId { get; set; }
@@ -156,6 +170,7 @@ namespace DarkFit_app
             public DateTime CreatedAt { get; set; }
             public string SenderName { get; set; }
             public int SenderUserId { get; set; }
+            public bool IsRead { get; set; }
         }
     }
 }

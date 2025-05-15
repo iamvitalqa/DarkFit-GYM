@@ -36,8 +36,9 @@
                       Margin="10">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <Frame Padding="10" CornerRadius="10" Margin="5" BackgroundColor="White" BorderColor="LightGray" >
+                            <ViewCell IsEnabled="{Binding IsRead, Converter={StaticResource InverseBoolConverter}}" >
+                                <Frame Padding="10" CornerRadius="10" Margin="5" BackgroundColor="{Binding IsRead, Converter={StaticResource ReadStatusToColorConverter}}" 
+                                       BorderColor="LightGray" >
                                     <StackLayout>
                                         <Grid ColumnDefinitions="*,Auto">
                                             <Label Text="{Binding SenderName}"

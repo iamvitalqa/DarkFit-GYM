@@ -13,6 +13,8 @@
         <ResourceDictionary>
             <local:BoolToSymbolConverter x:Key="BoolToSymbolConverter" />
             <local:ZeroToVisibilityConverter x:Key="ZeroToVisibilityConverter" />
+            <local:ReadStatusToColorConverter x:Key="ReadStatusToColorConverter" />
+            <local:InverseBoolConverter x:Key="InverseBoolConverter" />
         </ResourceDictionary>
 
         
