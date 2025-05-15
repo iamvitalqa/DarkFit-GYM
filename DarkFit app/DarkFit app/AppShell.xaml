@@ -48,11 +48,6 @@
                 <local:TrainersPage />
             </ShellContent.Content>
         </ShellContent>
-        <ShellContent Title="Групповые" Icon="groups_icon.png" Route="GroupsPage" >
-            <ShellContent.Content>
-                <local:GroupsPage />
-            </ShellContent.Content>
-        </ShellContent>
         <ShellContent Title="Массаж" Icon="massage_icon.png" Route="MassagePage" >
             <ShellContent.Content>
                 <local:MassagePage />

@@ -16,6 +16,7 @@
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
                    FontSize="28"
+                   Margin="0,0,35,0"
                    FontAttributes="Bold"
                    TextColor="Black"
                    Grid.Column="1" />
@@ -25,11 +26,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20" Spacing="25">
-                <Label Text="Сообщения"
-                       FontSize="20"
-                       FontAttributes="Bold"
-                       TextColor="Black"
-                       HorizontalOptions="Center"/>
+                
 
                 <ListView ItemsSource="{Binding Notifications}"
                           HasUnevenRows="True"

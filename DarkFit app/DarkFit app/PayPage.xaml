@@ -4,6 +4,30 @@
              x:Class="DarkFit_app.PayPage"
              Title="Оплата"
              BackgroundColor="#f1f2f3">
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="*,Auto,*"
+  VerticalOptions="Center"
+  Padding="0,0,0,0">
+            <Image Source="darkfitCaption.png"
+       HorizontalOptions="Start"
+       VerticalOptions="Center" 
+       Grid.Column="0"
+       Margin="0,0"/>
+            <Label Text="Оплата"
+       HorizontalOptions="Center"
+       HorizontalTextAlignment="Center"
+       VerticalOptions="Center"
+       Margin="0,0,35,0"
+       TextColor="Black"
+       FontAttributes="Bold"
+       FontSize="28"
+       Grid.Column="1"/>
+        </Grid>
+
+    </Shell.TitleView>
+
+
     <ContentPage.Content>
         <StackLayout Padding="10">
             <Label Text="Оплата через ЮMoney"

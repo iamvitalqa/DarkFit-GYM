@@ -35,6 +35,8 @@ namespace DarkFit_app.Views
 
         private async void feedbackButton_CLicked(object sender, EventArgs e)
         {
+            await PopupNavigation.Instance.PopAsync();
+
             int userId = Preferences.Get("UserId", -1);
             if (userId != -1)
             {
@@ -47,8 +49,12 @@ namespace DarkFit_app.Views
 
         }
 
+        private async void settingsButton_Clicked(object sender, EventArgs e)
+        {
+            await PopupNavigation.Instance.PopAsync();
+            await Shell.Current.GoToAsync(nameof(SettingsPage));
+            
 
-
-
+        }
     }
 }
