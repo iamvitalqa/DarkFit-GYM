@@ -19,7 +19,7 @@
             HorizontalOptions="End"
             VerticalOptions="Start">
             <StackLayout Spacing="10">
-                <Label Text="💰 Баланс: 0₽" FontSize="24" TextColor="Black" />
+                <Label Text="{Binding BalanceText}" FontSize="24" TextColor="Black" />
                 <Label Text="⚙️ Настройки" FontSize="24" TextColor="Black">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer  Tapped="settingsButton_Clicked" />

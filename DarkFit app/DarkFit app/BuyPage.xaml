@@ -5,101 +5,127 @@
              BackgroundColor="#f1f2f3"
              Title="Корзина">
 
-
     <Shell.TitleView>
-        <Grid ColumnDefinitions="*,Auto,*"
-      VerticalOptions="Center"
-      Padding="0,0,0,0">
+        <Grid ColumnDefinitions="*,Auto,*" VerticalOptions="Center" Padding="0">
             <Image Source="darkfitCaption.png"
-           HorizontalOptions="Start"
-           VerticalOptions="Center" 
-           Grid.Column="0"
-           Margin="0,0"/>
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Grid.Column="0" />
             <Label Text="Корзина"
-           HorizontalOptions="Center"
-           HorizontalTextAlignment="Center"
-           VerticalOptions="Center"
-           Margin="0,0,35,0"
-           TextColor="Black"
-           FontAttributes="Bold"
-           FontSize="28"
-           Grid.Column="1"/>
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   Margin="0,0,35,0"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="28"
+                   Grid.Column="1"/>
         </Grid>
-
     </Shell.TitleView>
 
-
-
     <ContentPage.Content>
-        <StackLayout Padding="10">
+        <StackLayout Padding="10" Spacing="15">
 
-            <!-- Фрейм для списка товаров в корзине -->
+            <!-- Фрейм со списком товаров или заглушкой -->
             <Frame BackgroundColor="White" Padding="10" CornerRadius="10" Margin="10">
-                <CollectionView ItemsSource="{Binding CartItems}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Padding="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="60" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="30" />
-                                </Grid.ColumnDefinitions>
+                <StackLayout>
+                    <Label x:Name="EmptyCartLabel"
+                           Text="Тут будут товары"
+                           FontSize="20"
+                           TextColor="Gray"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           IsVisible="True"/>
 
-                                <Image Source="{Binding ProductImage}" 
-                                       HeightRequest="60" 
-                                       WidthRequest="60" 
-                                       Aspect="AspectFit"
-                                       Grid.Column="0" />
+                    <CollectionView x:Name="CartCollectionView"
+                                    ItemsSource="{Binding CartItems}"
+                                    IsVisible="False">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="80" />
+                                        <ColumnDefinition Width="30" />
+                                    </Grid.ColumnDefinitions>
 
-                                <Label Text="{Binding ProductName}"
-                                       FontSize="25"
-                                       TextColor="Black"
-                                       VerticalTextAlignment="Center"
-                                       Grid.Column="1" />
+                                    <Image Source="{Binding ProductImage}" 
+                                           HeightRequest="60" 
+                                           WidthRequest="60" 
+                                           Aspect="AspectFit"
+                                           Grid.Column="0" />
 
-                                <Label Text="{Binding ProductCost, StringFormat='{0:C}'}"
-                                       FontSize="25"
-                                       TextColor="#8dbf42"
-                                       VerticalTextAlignment="Center"
-                                       HorizontalTextAlignment="End"
-                                       Grid.Column="2" />
+                                    <Label Text="{Binding ProductName}"
+                                           FontSize="25"
+                                           TextColor="Black"
+                                           VerticalTextAlignment="Center"
+                                           Grid.Column="1" />
 
-                                <!-- Кнопка удаления товара из корзины -->
-                                <ImageButton Source="close_icon.png"
-                                             x:Name="removeFromCart"
-                                             BackgroundColor="Transparent"
-                                             Clicked="removeFromCart_Clicked"
-                                             CommandParameter="{Binding}"
-                                             Grid.Column="3" />
-                            </Grid>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                                    <Label Text="{Binding ProductCost, StringFormat='{0:C}'}"
+                                           FontSize="25"
+                                           TextColor="#8dbf42"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="End"
+                                           Grid.Column="2" />
+
+                                    <ImageButton Source="close_icon.png"
+                                                 BackgroundColor="Transparent"
+                                                 Clicked="removeFromCart_Clicked"
+                                                 CommandParameter="{Binding}"
+                                                 Grid.Column="3" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
             </Frame>
 
-            <!-- Фрейм для общей суммы и кнопки оплаты -->
+            <!-- Фрейм для оплаты -->
             <Frame BackgroundColor="White" Padding="10" CornerRadius="10" Margin="10">
-                <StackLayout Spacing="10">
-                    <Label Text="Всего к оплате:"
-                           FontSize="25"
+                <StackLayout Spacing="15">
+
+                    <!-- Сумма к оплате -->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label Text="Всего к оплате:"
+                               FontSize="25"
+                               TextColor="Black"
+                               VerticalOptions="Center"/>
+                        <Label x:Name="TotalCostLabel"
+                               Text="{Binding TotalCost, StringFormat='{0:C}'}"
+                               FontSize="26"
+                               FontAttributes="Bold"
+                               TextColor="#8dbf42"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="Center"/>
+                    </StackLayout>
+
+                    <!-- Способ оплаты -->
+                    <Label Text="Способ оплаты:"
+                           FontSize="20"
                            TextColor="Black"
-                           HorizontalOptions="Start" />
+                           FontAttributes="Bold" />
 
-                    <Label x:Name="TotalCostLabel"
-                           Text="{Binding TotalCost, StringFormat='{0:C}'}"
-                           FontSize="26"
-                           FontAttributes="Bold"
-                           TextColor="#8dbf42"
-                           HorizontalOptions="Start" />
+                    <!-- Радио-кнопка: Бонусы -->
+                    <RadioButton GroupName="PaymentMethod"
+                                 Content="{Binding BonusOptionText}"
+                                 Value="Bonus"
+                                 IsChecked="{Binding IsBonusSelected}" />
 
+                    <!-- Радио-кнопка: Карта -->
+                    <RadioButton GroupName="PaymentMethod"
+                                 Content="Оплатить картой"
+                                 Value="Card"
+                                 IsChecked="{Binding IsCardSelected}" />
+
+                    <!-- Кнопка оплаты -->
                     <Button Text="Перейти к оплате"
                             CornerRadius="25"
-                            x:Name="paymentButton"
                             FontSize="22"
                             BackgroundColor="#8dbf42"
                             TextColor="White"
                             Command="{Binding ProceedToPaymentCommand}" />
+
                 </StackLayout>
             </Frame>
 
