@@ -8,52 +8,58 @@
     CloseWhenBackgroundIsClicked="False">
 
     <Grid Padding="20" VerticalOptions="CenterAndExpand">
-        <Frame BackgroundColor="White" Padding="20" CornerRadius="10" HasShadow="True">
+        <Frame BackgroundColor="White" BorderColor="Black" Padding="20" CornerRadius="10" HasShadow="True">
             <StackLayout Spacing="15">
 
                 <!-- Заголовок -->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="80"/>
                     </Grid.ColumnDefinitions>
 
                     <Label Text="Обратная связь"
                            FontAttributes="Bold"
-                           FontSize="18"
+                           FontSize="30"
+                           TextTransform="Uppercase"
+                           TextColor="Black"
                            Grid.Column="0"
                            VerticalOptions="Center"/>
 
-                    <Button Text="X"
+                    <ImageButton Source="close_icon.png"
                             Grid.Column="1"
+                                 HeightRequest="25"
+                                 WidthRequest="25"
+                                 HorizontalOptions="End"
                             BackgroundColor="Transparent"
-                            TextColor="Black"
                             Clicked="OnCloseButtonClicked"/>
                 </Grid>
 
                 <!-- Подсказка -->
                 <Label Text="Если у Вас есть предложения, пожелания или отзыв — Вы можете связаться с нами через данную форму. Сообщения из неё видит только руководитель клуба."
-                       FontSize="13"
+                       FontSize="22"
                        TextColor="Black"/>
 
                 <!-- Имя -->
-                <Entry x:Name="NameEntry" Placeholder="Ваше имя"/>
+                <Entry x:Name="NameEntry" FontSize="24" TextColor="#1d3ade" Placeholder="Аноним"/>
 
                 <!-- Анонимность -->
                 <StackLayout Orientation="Horizontal">
                     <CheckBox x:Name="AnonCheckbox" CheckedChanged="OnAnonCheckedChanged"/>
-                    <Label Text="Оставить анонимно"
+                    <Label Text="Оставить анонимно" TextColor="Black" FontSize="24"
                            VerticalTextAlignment="Center"/>
                 </StackLayout>
 
                 <!-- Сообщение -->
                 <Editor x:Name="MessageEditor"
                         Placeholder="Текст сообщения:"
-                        HeightRequest="100"/>
+                        HeightRequest="100"
+                        FontSize="24"/>
 
                 <!-- Кнопка отправки -->
                 <Button Text="Отправить"
                         FontSize="20"
+                        CornerRadius="25"
                         BackgroundColor="#0033A1"
                         TextColor="White"
                         Clicked="OnSubmitClicked"/>

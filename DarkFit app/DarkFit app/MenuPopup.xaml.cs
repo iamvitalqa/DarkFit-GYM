@@ -57,8 +57,6 @@ namespace DarkFit_app.Views
                 OnPropertyChanged(nameof(BalanceText));
             }
         }
-
-
         private async void logoutButton_Clicked(object sender, EventArgs e)
         {
             bool confirmLogout = await Application.Current.MainPage.DisplayAlert("Выход", "Вы уверены, что хотите выйти из аккаунта?", "Да", "Нет");
@@ -74,8 +72,6 @@ namespace DarkFit_app.Views
                 Application.Current.MainPage = new AuthPage();
             }
         }
-
-
         private async void feedbackButton_CLicked(object sender, EventArgs e)
         {
             await PopupNavigation.Instance.PopAsync();
@@ -91,7 +87,6 @@ namespace DarkFit_app.Views
             }
 
         }
-
         private async void settingsButton_Clicked(object sender, EventArgs e)
         {
             await PopupNavigation.Instance.PopAsync();

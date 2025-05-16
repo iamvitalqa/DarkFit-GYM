@@ -31,8 +31,8 @@
                 <StackLayout>
                     <Label x:Name="EmptyCartLabel"
                            Text="Тут будут товары"
-                           FontSize="20"
-                           TextColor="Gray"
+                           FontSize="30"
+                           TextColor="Black"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            IsVisible="True"/>
@@ -88,12 +88,12 @@
                     <!-- Сумма к оплате -->
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Label Text="Всего к оплате:"
-                               FontSize="25"
+                               FontSize="30"
                                TextColor="Black"
                                VerticalOptions="Center"/>
                         <Label x:Name="TotalCostLabel"
                                Text="{Binding TotalCost, StringFormat='{0:C}'}"
-                               FontSize="26"
+                               FontSize="30"
                                FontAttributes="Bold"
                                TextColor="#8dbf42"
                                HorizontalOptions="EndAndExpand"
@@ -102,12 +102,13 @@
 
                     <!-- Способ оплаты -->
                     <Label Text="Способ оплаты:"
-                           FontSize="20"
+                           FontSize="26"
                            TextColor="Black"
                            FontAttributes="Bold" />
 
                     <!-- Радио-кнопка: Бонусы -->
                     <RadioButton GroupName="PaymentMethod"
+                                 FontSize="22"
                                  Content="{Binding BonusOptionText}"
                                  Value="Bonus"
                                  IsChecked="{Binding IsBonusSelected}" />
@@ -115,6 +116,7 @@
                     <!-- Радио-кнопка: Карта -->
                     <RadioButton GroupName="PaymentMethod"
                                  Content="Оплатить картой"
+                                 FontSize="22"
                                  Value="Card"
                                  IsChecked="{Binding IsCardSelected}" />
 
@@ -122,6 +124,7 @@
                     <Button Text="Перейти к оплате"
                             CornerRadius="25"
                             FontSize="22"
+                            
                             BackgroundColor="#8dbf42"
                             TextColor="White"
                             Command="{Binding ProceedToPaymentCommand}" />
