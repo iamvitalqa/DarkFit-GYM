@@ -36,32 +36,32 @@
 
             <Frame CornerRadius="10" >
                 <Editor x:Name="dopInfo"
-                Placeholder="Доп. информация" FontSize="22"
+                Placeholder="Доп. информация" FontSize="24"
                 HeightRequest="100" TextColor="Black" PlaceholderColor="Black" />
             </Frame><!-- Поле для ввода информации -->
             
 
             <!-- Список противопоказаний -->
-            <Label Text="Противопоказания для массажа:" FontAttributes="Bold" FontSize="18" TextColor="Black" />
+            <Label Text="Противопоказания для массажа:" FontAttributes="Bold" FontSize="26" TextColor="Black" />
             <StackLayout Orientation="Vertical">
-                <Label Text="• Болезненные и воспалительные процессы;" FontSize="18" TextColor="Black" />
-                <Label Text="• Системные заболевания;" FontSize="18" TextColor="Black" />
-                <Label Text="• Менструальный цикл и иные кровотечении;"  FontSize="18" TextColor="Black" />
-                <Label Text="• Онкология;" FontSize="18" TextColor="Black" />
+                <Label Text="• Болезненные и воспалительные процессы;" FontSize="22"  TextColor="Black" />
+                <Label Text="• Системные заболевания;" FontSize="22" TextColor="Black" />
+                <Label Text="• Менструальный цикл и иные кровотечении;"  FontSize="22" TextColor="Black" />
+                <Label Text="• Онкология;" FontSize="22" TextColor="Black" />
             </StackLayout>
 
             <!-- Флажок для подтверждения отсутствия противопоказаний -->
             <StackLayout Orientation="Horizontal">
                 <CheckBox x:Name="applyCheckBox" />
-                <Label Text="Я подтверждаю отсутствие противопоказаний" FontSize="18" TextColor="Black" VerticalOptions="Center"/>
+                <Label Text="Я подтверждаю отсутствие противопоказаний" FontSize="22" TextColor="Black" VerticalOptions="Center"/>
             </StackLayout>
             
                 
             <!-- Контактная информация -->
-            <Label Text="Вопросы по записи Вы можете задать по телефону: (347) 200-85-81" FontSize="18" TextColor="Black" />
+            <Label Text="Вопросы по записи Вы можете задать по телефону: (347) 200-85-81" FontSize="22" TextColor="Black" />
 
             <!-- Кнопка для создания записи -->
-            <Button Text="Создать запись" x:Name="createorderButton" Clicked="createorderButton_Clicked" BackgroundColor="#1d3ade" TextTransform="None" FontSize="24" CornerRadius="25" TextColor="White" HorizontalOptions="FillAndExpand" />
+            <Button Text="Создать заявку" x:Name="createorderButton" Clicked="createorderButton_Clicked" BackgroundColor="#1d3ade" TextTransform="None" FontSize="24" CornerRadius="25" TextColor="White" HorizontalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
