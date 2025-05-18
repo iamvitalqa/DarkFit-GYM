@@ -96,6 +96,10 @@ namespace DarkFit_app
                                 {
                                     senderName = $"{reader["worker_surname"]} {reader["worker_name"]}";
                                 }
+                                else if (senderRole == 1)
+                                {
+                                    senderName = "Руководство DarkFit";
+                                }
                             }
 
                             Notifications.Add(new NotificationModel
@@ -115,53 +119,66 @@ namespace DarkFit_app
 
         private async void OnNotificationTapped(object sender, ItemTappedEventArgs e)
         {
-            if (_roleId != 2) return; // Только тренеры могут отвечать
+            var notification = e.Item as NotificationModel;
+            if (notification == null || notification.IsRead)
+                return;
 
-            if (e.Item is NotificationModel notification)
+            string messageToSend = string.Empty;
+
+            if (_roleId == 2) // Тренер
             {
-                if (notification.IsRead)
-                    return;
-
                 bool confirm = await DisplayAlert("Ответ", $"Отправить клиенту ответ: \"Я скоро с Вами свяжусь! 😉\"?", "Да", "Нет");
                 if (!confirm) return;
+                messageToSend = "Я скоро с Вами свяжусь! 😉";
+            }
+            else if (_roleId == 1) // Админ
+            {
+                bool confirm = await DisplayAlert("Ответ", $"Отправить клиенту: \"Ваш заказ готов и ожидает получения в баре\"?", "Да", "Нет");
+                if (!confirm) return;
+                messageToSend = "Ваш заказ готов и ожидает получения в баре! 😎";
+            }
+            else
+            {
+                return; // Остальные роли не отвечают
+            }
 
-                try
+            try
+            {
+                using (var conn = new NpgsqlConnection(DarkFitDatabase.ConnectionString))
                 {
-                    using (var conn = new NpgsqlConnection(DarkFitDatabase.ConnectionString))
-                    {
-                        await conn.OpenAsync();
+                    await conn.OpenAsync();
 
-                        // Отправляем новое уведомление
-                        var insertCommand = new NpgsqlCommand(
-                            @"INSERT INTO notifications (user_id, sender_user_id, message, created_at, is_read)
-                              VALUES (@userId, @senderUserId, @message, NOW(), false)", conn);
+                    // Отправляем новое уведомление
+                    var insertCommand = new NpgsqlCommand(
+                        @"INSERT INTO notifications (user_id, sender_user_id, message, created_at, is_read)
+                  VALUES (@userId, @senderUserId, @message, NOW(), false)", conn);
 
-                        insertCommand.Parameters.AddWithValue("@userId", notification.SenderUserId);
-                        insertCommand.Parameters.AddWithValue("@senderUserId", _userId);
-                        insertCommand.Parameters.AddWithValue("@message", "Я скоро с Вами свяжусь! 😉");
+                    insertCommand.Parameters.AddWithValue("@userId", notification.SenderUserId);
+                    insertCommand.Parameters.AddWithValue("@senderUserId", _userId);
+                    insertCommand.Parameters.AddWithValue("@message", messageToSend);
 
-                        await insertCommand.ExecuteNonQueryAsync();
+                    await insertCommand.ExecuteNonQueryAsync();
 
-                        // Обновляем флаг is_read для текущего уведомления
-                        var updateCommand = new NpgsqlCommand(
-                            "UPDATE notifications SET is_read = TRUE WHERE notification_id = @notificationId", conn);
-                        updateCommand.Parameters.AddWithValue("@notificationId", notification.NotificationId);
-                        await updateCommand.ExecuteNonQueryAsync();
-                    }
-
-                    // Обновляем локально
-                    notification.IsRead = true;
-                    NotificationListView.ItemsSource = null;
-                    NotificationListView.ItemsSource = Notifications;
-
-                    await DisplayAlert("Отправлено", "Ответ отправлен клиенту!", "ОК");
+                    // Обновляем флаг is_read для текущего уведомления
+                    var updateCommand = new NpgsqlCommand(
+                        "UPDATE notifications SET is_read = TRUE WHERE notification_id = @notificationId", conn);
+                    updateCommand.Parameters.AddWithValue("@notificationId", notification.NotificationId);
+                    await updateCommand.ExecuteNonQueryAsync();
                 }
-                catch (Exception ex)
-                {
-                    await DisplayAlert("Ошибка", $"Ошибка при отправке ответа: {ex.Message}", "ОК");
-                }
+
+                // Обновляем локально
+                notification.IsRead = true;
+                NotificationListView.ItemsSource = null;
+                NotificationListView.ItemsSource = Notifications;
+
+                await DisplayAlert("Отправлено", "Ответ отправлен клиенту!", "ОК");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Ошибка", $"Ошибка при отправке ответа: {ex.Message}", "ОК");
             }
         }
+
 
         public class NotificationModel
         {

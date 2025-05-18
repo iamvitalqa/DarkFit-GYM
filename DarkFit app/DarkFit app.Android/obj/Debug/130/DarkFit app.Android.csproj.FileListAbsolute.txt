@@ -1387,6 +1387,15 @@ D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app.Android\obj\Debug\130\sta
 D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app.Android\obj\Debug\130\stamp\_GenerateJavaStubs.stamp
 D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app.Android\obj\Debug\130\stamp\_GeneratePackageManagerJava.stamp
 D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app.Android\obj\Debug\130\stamp\_ResolveLibraryProjectImports.stamp
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\DarkFit app.Android.dll
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\DarkFit app.Android.pdb
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\com.companyname.DarkFit_GYM.apk
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\com.companyname.DarkFit_GYM.aab
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\com.companyname.DarkFit_GYM-Signed.aab
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\com.companyname.DarkFit_GYM-Signed.apk
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\com.companyname.DarkFit_GYM-Signed.apk.idsig
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\DarkFit app.dll
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\DarkFit app.pdb
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\MonoAndroid,Version=v13.0.AssemblyAttributes.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\build.props
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\adb.props
@@ -1434,15 +1443,6 @@ D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\lp\
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\R.txt
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\R.cs.flag
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\DarkFit app.Android.csproj.CoreCompileInputs.cache
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\DarkFit app.Android.dll
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\DarkFit app.Android.pdb
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\com.companyname.DarkFit_GYM.apk
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\com.companyname.DarkFit_GYM.aab
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\com.companyname.DarkFit_GYM-Signed.aab
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\com.companyname.DarkFit_GYM-Signed.apk
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\com.companyname.DarkFit_GYM-Signed.apk.idsig
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\DarkFit app.dll
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\bin\Debug\DarkFit app.pdb
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\DarkFit .6ED5C6A9.Up2Date
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\DarkFit app.Android.dll
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\DarkFit app.Android.pdb

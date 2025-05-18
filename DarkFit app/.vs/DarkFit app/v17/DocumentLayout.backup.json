@@ -3,12 +3,48 @@
   "WorkspaceRootPath": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\notificationpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\notificationpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\paymentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\paymentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\buypage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\buypage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\buypage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\buypage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\paymentpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
       "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\paymentpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\feedbackpopup.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\feedbackpopup.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\feedbackpopup.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
+      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\feedbackpopup.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\trainerinfopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\trainerinfopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\massagepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\massagepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\massagepopup.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
@@ -31,16 +67,8 @@
       "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\darkfitdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\massagepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\massagepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\barpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\barpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\feedbackpopup.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
-      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\feedbackpopup.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\massagepage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
@@ -51,24 +79,8 @@
       "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\barpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\feedbackpopup.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\feedbackpopup.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\converters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\converters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\buypage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
-      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\buypage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\buypage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\buypage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\paypage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
@@ -79,16 +91,8 @@
       "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\app.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\notificationpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\notificationpage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\notificationpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
       "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\notificationpage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\trainerinfopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|solutionrelative:darkfit app\\trainerinfopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7620D093-55E0-4DD5-AEF1-7AF135542199}|DarkFit app\\DarkFit app.csproj|d:\\study\\diplomich\\darkfit gym\\darkfit app\\darkfit app\\settingspage.xaml||{2974C621-7033-421A-B08A-11D27B021D1B}",
@@ -145,76 +149,81 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 224,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            }
-          ]
-        },
-        {
           "DockedHeight": 91,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+              "Name": "ST:0:0:{0504ff91-9d61-11d0-a794-00a0c9110051}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "CartService.cs",
+              "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\CartService.cs",
+              "RelativeDocumentMoniker": "DarkFit app\\CartService.cs",
+              "ToolTip": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\CartService.cs",
+              "RelativeToolTip": "DarkFit app\\CartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T12:35:29.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "PaymentPage.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\PaymentPage.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\PaymentPage.xaml",
               "ToolTip": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\PaymentPage.xaml",
               "RelativeToolTip": "DarkFit app\\PaymentPage.xaml",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAwGIAAACLAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAwwGIAAACLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-04-18T14:19:30.039Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PaymentPage.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\PaymentPage.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\PaymentPage.xaml.cs",
-              "ToolTip": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\PaymentPage.xaml.cs*",
-              "RelativeToolTip": "DarkFit app\\PaymentPage.xaml.cs*",
-              "ViewState": "AgIAANIAAAAAAAAAAAAkwOYAAAAnAAAAAAAAAA==",
+              "ToolTip": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\PaymentPage.xaml.cs",
+              "RelativeToolTip": "DarkFit app\\PaymentPage.xaml.cs",
+              "ViewState": "AgIAALwAAAAAAAAAAAAAwBwAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-10T15:38:11.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 3,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\App.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\App.xaml.cs",
               "ToolTip": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\App.xaml.cs",
               "RelativeToolTip": "DarkFit app\\App.xaml.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAuwCkAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAADwvxcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T14:04:21.39Z"
+              "WhenOpened": "2025-05-15T14:04:21.39Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 0,
               "Title": "NotificationPage.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\NotificationPage.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\NotificationPage.xaml.cs",
               "ToolTip": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\NotificationPage.xaml.cs",
               "RelativeToolTip": "DarkFit app\\NotificationPage.xaml.cs",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAuwKIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAIwHsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T18:46:07.077Z"
+              "WhenOpened": "2025-05-11T18:46:07.077Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "NotificationPage.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\NotificationPage.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\NotificationPage.xaml",
@@ -226,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "MassagePage.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\MassagePage.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\MassagePage.xaml",
@@ -238,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "BarPage.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\BarPage.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\BarPage.xaml",
@@ -250,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "MassagePage.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\MassagePage.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\MassagePage.xaml.cs",
@@ -263,31 +272,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 4,
               "Title": "BuyPage.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\BuyPage.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\BuyPage.xaml",
               "ToolTip": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\BuyPage.xaml",
               "RelativeToolTip": "DarkFit app\\BuyPage.xaml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAIQAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAQwHUAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-10T14:38:33.871Z"
+              "WhenOpened": "2025-05-10T14:38:33.871Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 2,
               "Title": "BuyPage.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\BuyPage.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\BuyPage.xaml.cs",
               "ToolTip": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\BuyPage.xaml.cs",
               "RelativeToolTip": "DarkFit app\\BuyPage.xaml.cs",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAqwJ8AAABCAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwL0AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T14:38:36.714Z"
+              "WhenOpened": "2025-05-10T14:38:36.714Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "PayPage.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\PayPage.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\PayPage.xaml",
@@ -299,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "MassageOrder.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\MassageOrder.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\MassageOrder.xaml",
@@ -312,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "SettingsPage.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\SettingsPage.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\SettingsPage.xaml",
@@ -324,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "MenuPopup.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\MenuPopup.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\MenuPopup.xaml",
@@ -337,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\App.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\App.xaml",
@@ -349,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "Converters.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\Converters.cs",
               "RelativeDocumentMoniker": "DarkFit app\\Converters.cs",
@@ -361,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "MenuPopup.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\MenuPopup.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\MenuPopup.xaml.cs",
@@ -374,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "BarPage.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\BarPage.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\BarPage.xaml.cs",
@@ -386,19 +397,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 7,
               "Title": "FeedbackPopup.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\FeedbackPopup.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\FeedbackPopup.xaml.cs",
               "ToolTip": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\FeedbackPopup.xaml.cs",
               "RelativeToolTip": "DarkFit app\\FeedbackPopup.xaml.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAAwHAAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAuwH0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T19:36:35.431Z"
+              "WhenOpened": "2025-04-18T19:36:35.431Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "FeedbackPopup.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\FeedbackPopup.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\FeedbackPopup.xaml",
@@ -406,11 +418,12 @@
               "RelativeToolTip": "DarkFit app\\FeedbackPopup.xaml",
               "ViewState": "AgIAAA0AAAAAAAAAAAAuwDIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-18T19:36:21.022Z"
+              "WhenOpened": "2025-04-18T19:36:21.022Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "AppShell.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\AppShell.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\AppShell.xaml",
@@ -422,7 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "AppShell.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\AppShell.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\AppShell.xaml.cs",
@@ -434,7 +447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "AuthPage.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\AuthPage.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\AuthPage.xaml.cs",
@@ -446,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "AuthPage.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\AuthPage.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\AuthPage.xaml",
@@ -458,19 +471,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 9,
               "Title": "TrainerInfoPage.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\TrainerInfoPage.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\TrainerInfoPage.xaml.cs",
               "ToolTip": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\TrainerInfoPage.xaml.cs",
               "RelativeToolTip": "DarkFit app\\TrainerInfoPage.xaml.cs",
-              "ViewState": "AgIAAI8AAAAAAAAAAAAqwKUAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAA0wJkAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T13:59:16.665Z"
+              "WhenOpened": "2025-04-18T13:59:16.665Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "TrainerInfoPage.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\TrainerInfoPage.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\TrainerInfoPage.xaml",
@@ -482,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "ZeroToVisibilityConverter.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\ZeroToVisibilityConverter.cs",
               "RelativeDocumentMoniker": "DarkFit app\\ZeroToVisibilityConverter.cs",
@@ -494,7 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "ItemsHeightConverter.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\ItemsHeightConverter.cs",
               "RelativeDocumentMoniker": "DarkFit app\\ItemsHeightConverter.cs",
@@ -506,7 +520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "PayPage.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\PayPage.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\PayPage.xaml.cs",
@@ -518,7 +532,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "DarkFitDatabase.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\DarkFitDatabase.cs",
               "RelativeDocumentMoniker": "DarkFit app\\DarkFitDatabase.cs",
@@ -531,7 +545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "TrainersPage.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\TrainersPage.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\TrainersPage.xaml.cs",
@@ -543,7 +557,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "MassageOrder.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\MassageOrder.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\MassageOrder.xaml.cs",
@@ -555,7 +569,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "MassagePopup.xaml.cs",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\MassagePopup.xaml.cs",
               "RelativeDocumentMoniker": "DarkFit app\\MassagePopup.xaml.cs",
@@ -567,7 +581,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "MassagePopup.xaml",
               "DocumentMoniker": "D:\\study\\Diplomich\\DARKFIT GYM\\DarkFit app\\DarkFit app\\MassagePopup.xaml",
               "RelativeDocumentMoniker": "DarkFit app\\MassagePopup.xaml",
@@ -586,11 +600,23 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "Name": "ST:0:0:{45a9fcd5-392d-4c5b-89e1-62d4aa07496f}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "Name": "ST:0:0:{21457f7c-a428-477e-ae6d-e2b608734650}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{be4d7042-ba3f-11d2-840e-00c04f9902c1}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{605322a2-17ae-43f4-b60f-766556e46c87}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }

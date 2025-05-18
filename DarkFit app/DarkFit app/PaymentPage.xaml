@@ -96,7 +96,7 @@
                             <RadioButton x:Name="radioButton4" TextColor="Black" Content="6 месяцев: 14 990 ₽" FontSize="20" />
                             <RadioButton x:Name="radioButton5" TextColor="Black" Content="12 месяцев: 24 990 ₽" FontSize="20" />
                         </StackLayout>
-                        <Entry Placeholder="Введите промокод" FontSize="20" TextColor="Black" PlaceholderColor="Black" x:Name="promoEntry" TextChanged="promoEntry_TextChanged" />
+                        <Entry Placeholder="Введите промокод" FontSize="20" TextColor="Black" PlaceholderColor="Black" x:Name="promoEntry"  />
                         <Button Text="Подтвердить"  BackgroundColor="#1d3ade" TextColor="White" FontSize="22" CornerRadius="25"  Clicked="OnConfirmCardPayment"   />
                     </StackLayout>
                 </Frame>
