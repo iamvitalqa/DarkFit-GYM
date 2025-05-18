@@ -10,6 +10,8 @@ namespace DarkFit_app
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PaymentPage : ContentPage
     {
+        private decimal discountedAmount = 0; // будет применяться в OnConfirmCardPayment
+
         public PaymentPage()
         {
             InitializeComponent();
@@ -18,7 +20,12 @@ namespace DarkFit_app
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            await LoadUserInfoAsync();
+            await LoadCardExpiryAsync(); // загрузка даты действия карты
+        }
 
+        private async Task LoadUserInfoAsync()
+        {
             try
             {
                 int userId = App.CurrentUserId;
@@ -105,9 +112,6 @@ namespace DarkFit_app
             }
         }
 
-
-
-
         private void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (decimal.TryParse(e.NewTextValue, out decimal enteredAmount) && enteredAmount > 0)
@@ -128,29 +132,11 @@ namespace DarkFit_app
             }
         }
 
-        private void promoEntry_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string promoCode = e.NewTextValue;
-            if (promoCode == "NEWYEAR2025")
-                ApplyDiscount(0.30m);
-            else
-                ApplyDiscount(0.00m);
-        }
+        
 
-        private void ApplyDiscount(decimal discount)
-        {
-            UpdateRadioButtonText(radioButton1, 350, discount);
-            UpdateRadioButtonText(radioButton2, 990, discount);
-            UpdateRadioButtonText(radioButton3, 3490, discount);
-            UpdateRadioButtonText(radioButton4, 14990, discount);
-            UpdateRadioButtonText(radioButton5, 24990, discount);
-        }
+        
 
-        private void UpdateRadioButtonText(RadioButton radioButton, decimal originalPrice, decimal discount)
-        {
-            decimal discountedPrice = originalPrice * (1 - discount);
-            radioButton.Content = $"{originalPrice} ₽ (скидка {discount * 100}%): {discountedPrice:F2} ₽";
-        }
+        
 
         private async void depositButton_Clicked(object sender, EventArgs e)
         {
@@ -174,6 +160,106 @@ namespace DarkFit_app
         private async void notificationButton_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync(nameof(NotificationPage));
+        }
+
+        private async void OnConfirmCardPayment(object sender, EventArgs e)
+        {
+            int durationDays = 0;
+            decimal amount = 0;
+            string description = "";
+
+            if (radioButton1.IsChecked) { amount = 350; durationDays = 1; description = "1 день"; }
+            else if (radioButton2.IsChecked) { amount = 990; durationDays = 7; description = "7 дней"; }
+            else if (radioButton3.IsChecked) { amount = 3490; durationDays = 31; description = "1 месяц"; }
+            else if (radioButton4.IsChecked) { amount = 14990; durationDays = 180; description = "6 месяцев"; }
+            else if (radioButton5.IsChecked) { amount = 24990; durationDays = 365; description = "1 год"; }
+
+            if (amount == 0 || durationDays == 0)
+            {
+                await DisplayAlert("Ошибка", "Выберите тип абонемента", "OK");
+                return;
+            }
+
+            bool isConfirmed = await DisplayAlert(
+                "Подтверждение оплаты",
+                $"Вы уверены, что хотите приобрести абонемент на {description} за {amount} ₽?",
+                "Да", "Нет");
+
+            if (!isConfirmed)
+                return;
+
+            int userId = App.CurrentUserId;
+            bool success = await ProcessCardPurchaseAsync(userId, amount, durationDays);
+
+            if (success)
+            {
+                await LoadCardExpiryAsync();
+                await DisplayAlert("Успешно", "Абонемент успешно оформлен", "ОК");
+            }
+            else
+            {
+                await DisplayAlert("Ошибка", "Недостаточно средств или произошла ошибка", "ОК");
+            }
+        }
+
+
+        private async Task<bool> ProcessCardPurchaseAsync(int userId, decimal price, int days)
+        {
+            using (var conn = new NpgsqlConnection(DarkFitDatabase.ConnectionString))
+            {
+                await conn.OpenAsync();
+
+                var cmd = new NpgsqlCommand(@"
+                    UPDATE clients
+                    SET 
+                        clientbalance = clientbalance - @price,
+                        card_expiry = 
+                            CASE 
+                                WHEN card_expiry IS NULL OR card_expiry < CURRENT_DATE THEN CURRENT_DATE + @days
+                                ELSE card_expiry + @days 
+                            END
+                    WHERE user_id = @userId AND clientbalance >= @price
+                    RETURNING card_expiry;
+                ", conn);
+
+                cmd.Parameters.AddWithValue("price", price);
+                cmd.Parameters.AddWithValue("days", days);
+                cmd.Parameters.AddWithValue("userId", userId);
+
+                var result = await cmd.ExecuteScalarAsync();
+                return result != null;
+            }
+        }
+
+        private async Task LoadCardExpiryAsync()
+        {
+            try
+            {
+                int userId = App.CurrentUserId;
+                using (var conn = new NpgsqlConnection(DarkFitDatabase.ConnectionString))
+                {
+                    await conn.OpenAsync();
+                    var cmd = new NpgsqlCommand("SELECT card_expiry FROM clients WHERE user_id = @userId", conn);
+                    cmd.Parameters.AddWithValue("userId", userId);
+
+                    var result = await cmd.ExecuteScalarAsync();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        DateTime expiry = Convert.ToDateTime(result);
+                        cardExpirationLabel.Text = $"Срок действия карты истекает {expiry:dd.MM.yyyy}";
+                        cardExpirationLabel.IsVisible = true;
+                    }
+                    else
+                    {
+                        cardExpirationLabel.IsVisible = false;
+                    }
+                }
+            }
+            catch
+            {
+                cardExpirationLabel.IsVisible = false;
+            }
         }
     }
 }

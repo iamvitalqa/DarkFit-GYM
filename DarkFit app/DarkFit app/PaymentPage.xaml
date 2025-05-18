@@ -75,6 +75,15 @@
                         <Label Text="QR-code для входа" FontSize="30" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />
                         <Image Source="qr.png" HeightRequest="300" />
                         <Label Text="Покажите данный QR-code на ресепшен для входа в клуб." FontSize="17" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />
+
+                        <Label x:Name="cardExpirationLabel"
+                           
+                           FontSize="20"
+                           HorizontalOptions="Center"
+                           TextColor="Red"
+                           IsVisible="False" /> 
+
+
                     </StackLayout>
                 </Frame>
                 <Frame CornerRadius="10" Padding="15" BackgroundColor="White" BorderColor="LightGray">
@@ -88,7 +97,7 @@
                             <RadioButton x:Name="radioButton5" TextColor="Black" Content="12 месяцев: 24 990 ₽" FontSize="20" />
                         </StackLayout>
                         <Entry Placeholder="Введите промокод" FontSize="20" TextColor="Black" PlaceholderColor="Black" x:Name="promoEntry" TextChanged="promoEntry_TextChanged" />
-                        <Button Text="Подтвердить"  BackgroundColor="#1d3ade" TextColor="White" CornerRadius="25"  />
+                        <Button Text="Подтвердить"  BackgroundColor="#1d3ade" TextColor="White" FontSize="22" CornerRadius="25"  Clicked="OnConfirmCardPayment"   />
                     </StackLayout>
                 </Frame>
                 <Frame CornerRadius="10" Padding="15" BackgroundColor="White" BorderColor="LightGray">
@@ -102,7 +111,7 @@
                         </StackLayout>
                         <Entry Placeholder="Введите сумму" FontSize="20" Keyboard="Numeric" TextColor="Black" TextChanged="Entry_TextChanged" PlaceholderColor="Black" />
                         <Label Text="Счёт будет пополнен на: 0 ₽" FontSize="20" TextColor="Black" x:Name="costLabel"  />
-                        <Button Text="Подтвердить" x:Name="depositButton" BackgroundColor="#1d3ade" TextColor="White" CornerRadius="25" Clicked="depositButton_Clicked" />
+                        <Button Text="Подтвердить" x:Name="depositButton" FontSize="22" BackgroundColor="#1d3ade" TextColor="White" CornerRadius="25" Clicked="depositButton_Clicked" />
                     </StackLayout>
                 </Frame>
                 

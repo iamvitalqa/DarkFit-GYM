@@ -5,11 +5,12 @@
     xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
     x:Class="DarkFit_app.Views.MenuPopup"
     BackgroundColor="Transparent"
+    
     CloseWhenBackgroundIsClicked="True"
     Padding="0">
 
     <Grid VerticalOptions="Start" HorizontalOptions="End" Padding="10">
-        <Frame
+        <Frame BorderColor="LightGray"
             Margin="0,35,0,0"
             BackgroundColor="White" 
             CornerRadius="10" 

@@ -48,10 +48,6 @@ D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\
 D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.dll
 D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\refint\DarkFit app.dll
 D:\study\Diplomich\DarkFit app\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.pdb
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.deps.json
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.dll
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\ref\DarkFit app.dll
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.pdb
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.csproj.AssemblyReference.cache
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit_app.Properties.Resources.resources
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.csproj.GenerateResource.cache
@@ -79,7 +75,11 @@ D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.AssemblyInfo.cs
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.csproj.CoreCompileInputs.cache
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.sourcelink.json
-D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\XamlC.stamp
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.dll
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\refint\DarkFit app.dll
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\DarkFit app.pdb
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.deps.json
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.dll
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\ref\DarkFit app.dll
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\bin\Debug\netstandard2.0\DarkFit app.pdb
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app\obj\Debug\netstandard2.0\XamlC.stamp
