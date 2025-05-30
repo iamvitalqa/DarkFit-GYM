@@ -1,9 +1,10 @@
 ﻿using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
 using System;
 using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms;
-using Rg.Plugins.Popup.Services;
+
 using Npgsql;
 
 

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DarkFit_app.SettingsPage">
+             x:Class="DarkFit_app.SettingsPage"
+             BackgroundColor="#f1f2f3">
 
     <Shell.TitleView>
         <Grid ColumnDefinitions="60,*,60"
@@ -26,10 +27,36 @@ VerticalOptions="Center">
 
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="ТУТ БУДУТ НАСТРОЙКИ" FontSize="20"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="10">
+
+                <!-- Frame 1: Изменение логина и пароля -->
+                <Frame BorderColor="LightGray" CornerRadius="10" Padding="15">
+                    <StackLayout Spacing="10">
+                        <Label Text="Данные аккаунта" HorizontalOptions="Center" FontSize="28" TextColor="Black" FontAttributes="Bold"/>
+                        <Entry x:Name="LoginLabel" IsEnabled="False" TextColor="Black" FontSize="24"  />
+                        <Entry x:Name="OldPasswordEntry" Placeholder="Старый пароль" TextColor="Black"  FontSize="24"  IsPassword="True"/>
+                        <Entry x:Name="NewPasswordEntry" Placeholder="Новый пароль" TextColor="Black"  FontSize="24"  IsPassword="True"/>
+                        <Entry x:Name="ConfirmPasswordEntry" Placeholder="Подтвердите пароль" TextColor="Black"  FontSize="24"  IsPassword="True"/>
+                        <Button Text="Изменить" BackgroundColor="#1d3ade" TextColor="White"  FontSize="22" CornerRadius="25" Clicked="OnChangePasswordClicked"/>
+                    </StackLayout>
+                </Frame> 
+
+                <!-- Frame 2: Изменение ФИО и телефона -->
+                <Frame BorderColor="LightGray" CornerRadius="10" Padding="15">
+                    <StackLayout Spacing="10">
+                        <Label Text="Персональные данные" HorizontalOptions="Center" FontSize="28" TextColor="Black" FontAttributes="Bold"/>
+                        <Entry x:Name="SurnameEntry" Placeholder="Фамилия" FontSize="24" TextColor="Black" />
+                        <Entry x:Name="NameEntry" TextColor="Black" FontSize="24"  Placeholder="Имя"/>
+                        <Entry x:Name="PatronymicEntry" TextColor="Black" FontSize="24"  Placeholder="Отчество"/>
+                        <Entry x:Name="PhoneEntry" TextColor="Black" Placeholder="Телефон" TextChanged="OnPhoneTextChanged" FontSize="24"  Keyboard="Telephone"/>
+                        <Button Text="Сохранить" BackgroundColor="#1d3ade" TextColor="White" FontSize="22" CornerRadius="25" Clicked="OnSaveClientInfoClicked"/>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+
+
     </ContentPage.Content>
 </ContentPage>

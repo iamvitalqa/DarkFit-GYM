@@ -38,22 +38,22 @@
 
 
     <TabBar>
-        <ShellContent Title="Бар" Icon="bar_icon.png" Route="BarPage" >
+        <ShellContent Title="БАР" Icon="bar_icon.png" Route="BarPage" >
             <ShellContent.Content>
                 <local:BarPage />
             </ShellContent.Content>
         </ShellContent>
-        <ShellContent Title="Тренеры" Icon="trainers_icon.png" Route="TrainersPage" >
+        <ShellContent Title="ТРЕНЕРЫ" Icon="trainers_icon.png" Route="TrainersPage" >
             <ShellContent.Content>
                 <local:TrainersPage />
             </ShellContent.Content>
         </ShellContent>
-        <ShellContent Title="Массаж" Icon="massage_icon.png" Route="MassagePage" >
+        <ShellContent Title="МАССАЖ" Icon="massage_icon.png" Route="MassagePage" >
             <ShellContent.Content>
                 <local:MassagePage />
             </ShellContent.Content>
         </ShellContent>
-        <ShellContent Title="Личный кабинет" Icon="home.png" Route="PaymentPage" >
+        <ShellContent Title="ПРОФИЛЬ" Icon="home.png" Route="PaymentPage" >
             <ShellContent.Content>
                 <local:PaymentPage />
             </ShellContent.Content>

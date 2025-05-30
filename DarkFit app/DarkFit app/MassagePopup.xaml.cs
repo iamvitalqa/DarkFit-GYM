@@ -1,6 +1,8 @@
 ﻿using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
 using System;
+using Xamarin.Essentials;
+using Xamarin.Forms.Xaml;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
