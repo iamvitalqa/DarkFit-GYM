@@ -29,6 +29,13 @@
 
   <ItemGroup>
     <None Remove="Resources\dark.jpg" />
+    <None Remove="Resources\font\comfortaa_bold.ttf" />
+    <None Remove="Resources\font\comfortaa_regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\font\comfortaa_bold.ttf" />
+    <EmbeddedResource Include="Resources\font\comfortaa_regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>

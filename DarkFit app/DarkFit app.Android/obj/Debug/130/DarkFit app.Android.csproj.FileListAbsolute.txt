@@ -1450,6 +1450,8 @@ D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\and
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\android\bin\base.zip
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\android\bin\com.companyname.DarkFit_GYM.aab
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\android\bin\com.companyname.DarkFit_GYM.apks
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res\font\comfortaa_bold.ttf
+D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res\font\comfortaa_regular.ttf
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res\values\styles.xml
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res\values\colors.xml
 D:\study\Diplomich\DARKFIT GYM\DarkFit app\DarkFit app.Android\obj\Debug\130\res\mipmap-anydpi-v26\icon.xml
